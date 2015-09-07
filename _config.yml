@@ -1,13 +1,13 @@
 # Site settings
-title: David Miller
+title: I4INFO
 header-img: img/home-bg.jpg
-email: hello@davidmiller.io
-description: "The official blog of David Miller, creator of Start Bootstrap and managing partner of Iron Summit Media Strategies"
+email: heeraj123@gmail.com
+description: "The official blog of I4INFO, Knowledge for the better future!"
 baseurl: ""
-url: "http://davidmiller.io/"
-twitter_username: davidmillerskt
-github_username:  davidtmiller
-facebook_username:  dmironsummit
+url: "http://i4info.in/"
+twitter_username: heeraj123
+github_username:  heeraj123
+facebook_username:  heeraj123
 
 # Build settings
 markdown: kramdown
