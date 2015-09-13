@@ -29,8 +29,10 @@ header-img: "img/post-bg-01.jpg"
 
 <p>By trying the several query based on mysql we got to understand! Its not a mysql database. Its a sqlite3 database.</p>
 
-<p>Problem solved , by 2 query execution we got the flag.</p>
+<p>Problem solved , by 2 query execution we got the flag, the first query to get the table name.</p>
 
 <blockquote><br>admin' union select password,password from user where user="admin"</blockquote>
+
+<p>Read our website for further security Info in future</p>
 
 

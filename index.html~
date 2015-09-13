@@ -1,6 +1,6 @@
 ---
 layout: page
-description: "Front End Developer and Bootstrap Specialist"
+description: "Security Enthusiast!"
 ---
 
 {% for post in paginator.posts %}
