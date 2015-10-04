@@ -1,0 +1,5 @@
+exchangable image file format
+contain meta data about the images
+exiftool -common 1.jpg//for detail
+exiftool -H 1.jpg // for huge number of data stored 
+exiftool -T -Filename -DateTimeOriginal -Focallength -Aperture *.jpg
