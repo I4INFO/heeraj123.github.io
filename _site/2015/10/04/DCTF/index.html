@@ -17,9 +17,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="The official blog of I4INFO, Knowledge for the better future!">
 
-    <title>Xss is old but gold! - I4INFO</title>
+    <title>Dctf Ctf - I4INFO</title>
 
-    <link rel="canonical" href="http://i4info.in//2015/09/13/web-security/">
+    <link rel="canonical" href="http://i4info.in//2015/10/04/DCTF/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -90,11 +90,11 @@
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <div class="post-heading">
-                    <h1>Xss is old but gold!</h1>
+                    <h1>Dctf Ctf</h1>
                     
-                    <h2 class="subheading">Google xss challenge!</h2>
+                    <h2 class="subheading">Experience of DCTF</h2>
                     
-                    <span class="meta">Posted by Heeraj on September 13, 2015</span>
+                    <span class="meta">Posted by Heeraj on October 4, 2015</span>
                 </div>
             </div>
         </div>
@@ -107,30 +107,21 @@
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 
-				<p> If you like to read our old blogs you are welcome, <a href="http://heeraj123.wordpress.com">I4INFO</a> Want to be a member of our team, contact us! </p>
+				<p> If you like to read our old blogs you are welcome, <a href="http://heeraj123.wordpress.com">I4INFO</a> </p>
 
-<p>Xss - cross site scripting, may be an old security bug but what it can do is even dangerous in todays senario.</p>
+<p>It was an great CTF, well the web challenges was very good. Our team bi0s secured 30th position in this CTF.</p>
 
-<p>Its intresting if someone is wants to learn xss. Its a good chance now the google is hosting xss challenge by them.
-One xss bug in google can give you $7500. </p>
+<p>The first challenge in the web based on race condition says the admin, I don't know how its race condition, but we got the flag by removing the PHP Session Id.It was really intresting.</p>
 
-<blockquote>" I may be an alert() , when I will be a big bang! "</blockquote>
+<p>The second challenge was really wonderful, I liked it very much. Much of the time I looked into the challende I thought , its all about PHP shell to be uploaded. And I was busy looking for the methods to upload a PHP shell.Then I came to know that I was wrong, it was something new. This was new attack vector I saw that it was a symlink attack. Actually from the source code, it was sure the it had some link with the /etc/passwd. Anyway there we made symlink corresponding to the /etc/passwd/. Thanks to the execellent <a href="http://josipfranjkovic.blogspot.fr/2014/12/reading-local-files-from-facebooks.html">blog</a> on bug bounty.It was nice one, it was an bug bounty attack. :)</p>
 
-<p>The challenge is available in <a href="https://xss-game.appspot.com/level2">xss-game</a> hosted by google.<p>
+<p>The third web was something very much annoying, I tried all the stuffs,like to find some sql injection. Because all I could do was that, because all I had was 2 pages one was login, one was register. All that we wanted to do to get the flag, was sql injection truncation method so that we get login. For that we to supply a 255 character username and you will get the flag.</p>
 
-<p>It would be an intresting challenge to solve . I will come up will the solution in my next blog.<p>
+<p>Fourth one was a cool one, stuck with it for hours, all it had was 4 pictures. Only thing that can be done with that would be a sql injection attack. The problem was I was doing all my testing of sql injection in the browser. Even one the foolishness that I have done was that I was doing the sql injection the "usr" variable , whereas we have to do with the id. It was when we used the burp suite we came to know that actually sql injection was happening. Because when we were doing sql injection with an image, whenever we do sql injection we only get an error with the image nothing else. To view that you have to use Burp suite, as you have to view all the response.From that we get an local file inclusion and we get the flag.</p>
 
-<p>The solution for the first blog is quite simple</p>
+<p>This time it was good, we have done all the problems, was able to learn more from the CTF. Also there were many Misc question that I looked for Misc 100, was to find the find the flag using tweak png. There was an Captcha problem, to solve I tried but didn't get it. Captcha is repeating nowdays in CTF, in Trend Micro it was tesseract and here something different.</p>
 
-<blockquote>&#x3C;srcipt&#x3E;alert(1)&#x3C;/script&#x3E;</blockquote>
-
-<p>Stay tuned!<br /> Untill we come with our another blog!</p>
-
-
-
-
-
-</p></p></p></p>
+<p>Thank you for reading the blog! </p>
 
 
                 <hr>
@@ -138,13 +129,9 @@ One xss bug in google can give you $7500. </p>
                 <ul class="pager">
                     
                     <li class="previous">
-                        <a href="/2015/09/13/test-post/" data-toggle="tooltip" data-placement="top" title="Must read blogs for web security researchers!">&larr; Previous Post</a>
+                        <a href="/2015/09/13/web-security/" data-toggle="tooltip" data-placement="top" title="Xss is old but gold!">&larr; Previous Post</a>
                     </li>
                     
-                    
-                    <li class="next">
-                        <a href="/2015/10/04/DCTF/" data-toggle="tooltip" data-placement="top" title="Dctf Ctf">Next Post &rarr;</a>
-                    </li>
                     
                 </ul>
 

@@ -1,0 +1,23 @@
+---
+layout:     post
+title:      "Dctf Ctf"
+subtitle:   "Experience of DCTF"
+date:       2015-10-04 17:14:00
+author:     "Heeraj"
+header-img: "img/post-bg-02.jpg"
+---
+<p> If you like to read our old blogs you are welcome, <a href="http://heeraj123.wordpress.com">I4INFO</a> </p>
+
+<p>It was an great CTF, well the web challenges was very good. Our team bi0s secured 30th position in this CTF.</p>
+
+<p>The first challenge in the web based on race condition says the admin, I don't know how its race condition, but we got the flag by removing the PHP Session Id.It was really intresting.</p>
+
+<p>The second challenge was really wonderful, I liked it very much. Much of the time I looked into the challende I thought , its all about PHP shell to be uploaded. And I was busy looking for the methods to upload a PHP shell.Then I came to know that I was wrong, it was something new. This was new attack vector I saw that it was a symlink attack. Actually from the source code, it was sure the it had some link with the /etc/passwd. Anyway there we made symlink corresponding to the /etc/passwd/. Thanks to the execellent <a href="http://josipfranjkovic.blogspot.fr/2014/12/reading-local-files-from-facebooks.html">blog</a> on bug bounty.It was nice one, it was an bug bounty attack. :)</p>
+
+<p>The third web was something very much annoying, I tried all the stuffs,like to find some sql injection. Because all I could do was that, because all I had was 2 pages one was login, one was register. All that we wanted to do to get the flag, was sql injection truncation method so that we get login. For that we to supply a 255 character username and you will get the flag.</p>
+
+<p>Fourth one was a cool one, stuck with it for hours, all it had was 4 pictures. Only thing that can be done with that would be a sql injection attack. The problem was I was doing all my testing of sql injection in the browser. Even one the foolishness that I have done was that I was doing the sql injection the "usr" variable , whereas we have to do with the id. It was when we used the burp suite we came to know that actually sql injection was happening. Because when we were doing sql injection with an image, whenever we do sql injection we only get an error with the image nothing else. To view that you have to use Burp suite, as you have to view all the response.From that we get an local file inclusion and we get the flag.</p>
+
+<p>This time it was good, we have done all the problems, was able to learn more from the CTF. Also there were many Misc question that I looked for Misc 100, was to find the find the flag using tweak png. There was an Captcha problem, to solve I tried but didn't get it. Captcha is repeating nowdays in CTF, in Trend Micro it was tesseract and here something different.</p>
+
+<p>Thank you for reading the blog! </p>
