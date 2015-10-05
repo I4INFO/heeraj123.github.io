@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      "Xss is old but gold!"
+title:      "Xss challenge solution!!"
 subtitle:   "Google xss challenge Solution!"
 date:       2015-10-06 16:47:00
 author:     "Heeraj"
