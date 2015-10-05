@@ -6,16 +6,6 @@ date:       2015-09-13 10:47:00
 author:     "Heeraj"
 header-img: "img/post-bg-02.jpg"
 ---
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- ad -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-0540814478217300"
-     data-ad-slot="5956699124"
-     data-ad-format="auto"></ins>
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({});
-</script>
 <p> If you like to read our old blogs you are welcome, <a href="http://heeraj123.wordpress.com">I4INFO</a> Want to be a member of our team, contact us! </p>
 
 <p>Xss - cross site scripting, may be an old security bug but what it can do is even dangerous in todays senario.</p>

