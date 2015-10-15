@@ -1,0 +1,31 @@
+---
+layout:     post
+title:      "Php comparison operator"
+subtitle:   "Vulnerability regarding the == operator in php"
+date:       2015-10-15 18:14:00
+author:     "Heeraj"
+header-img: "img/post-bg-02.png"
+---
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- ad -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-0540814478217300"
+     data-ad-slot="5956699124"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<p> If you like to read our old blogs you are welcome, <a href="http://heeraj123.wordpress.com">I4INFO</a> </p>
+
+<p>Ya in this blog I would like to discuss, the ASIS Ctf question "Impossible".I didn't solve this during the competition time, the problem was awesome. </p>
+
+<p>Most of the ctf the robots.txt file would be an area where some hint would be present. Ya in the case of ASIS, the 2 problem was given in the robots.txt.</p>
+
+<p>This is awesome problem problem, and new attack for me to learn, this was based on vulnerability in the php equal operator or you can say hash collition attack. Thanks to the dragon sector team for their <a href="http://gynvael.coldwind.pl/?id=492">blog</a> on this. Based on the users.dat file given, one can find that md5 equality operation in the get_user() was the reason behind getting the flag.</p>
+
+<p>Anyway the main reason behind the bypass of the equal to operation was because php return the true when the hashes starting with are compared. So the motive of us was to find the another string which would be a reason for getting the password.</p>
+
+<p>This was an awesome problem, thanks to the <a href="http://nandynarwhals.org/2015/10/12/asis-ctf-finals-2015-impossible-web/"> ctftime writeup</a> on this. Once you get another string whose hash starts with 0e, you can register with that user. That would give the password of the users.dat 's registered user password.</p>
+
+<p>Thank you for reading the blog! </p>
