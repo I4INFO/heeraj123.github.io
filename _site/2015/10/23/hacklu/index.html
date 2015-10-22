@@ -17,9 +17,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="The official blog of I4INFO, Knowledge for the better future!">
 
-    <title>Xss is old but gold! - I4INFO</title>
+    <title>Web 100 Hack lu - I4INFO</title>
 
-    <link rel="canonical" href="http://i4info.in//2015/09/13/web-security/">
+    <link rel="canonical" href="http://i4info.in//2015/10/23/hacklu/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -85,16 +85,16 @@
 
 
     <!-- Post Header -->
-<header class="intro-header" style="background-image: url('/img/post-bg-02.jpg')">
+<header class="intro-header" style="background-image: url('/img/post-bg-02.png')">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <div class="post-heading">
-                    <h1>Xss is old but gold!</h1>
+                    <h1>Web 100 Hack lu</h1>
                     
-                    <h2 class="subheading">Google xss challenge!</h2>
+                    <h2 class="subheading">Hack lu  Ctf</h2>
                     
-                    <span class="meta">Posted by Heeraj on September 13, 2015</span>
+                    <span class="meta">Posted by Heeraj on October 23, 2015</span>
                 </div>
             </div>
         </div>
@@ -114,30 +114,18 @@
 <script>
 (adsbygoogle = window.adsbygoogle || []).push({});
 </script></p>
-<p> If you like to read our old blogs you are welcome, <a href="http://heeraj123.wordpress.com">I4INFO</a> Want to be a member of our team, contact us! </p>
+<p> If you like to read our old blogs you are welcome, <a href="http://heeraj123.wordpress.com">I4INFO</a> </p>
 
-<p>Xss - cross site scripting, may be an old security bug but what it can do is even dangerous in todays senario.</p>
+<p>Hack lu CTF web challenges easy compared to the other CTF, well then basically the bashful, was the easiest of them.</p>
 
-<p>Its intresting if someone is wants to learn xss. Its a good chance now the google is hosting xss challenge by them.
-One xss bug in google can give you $7500. </p>
+<p>The source code was provided, I started to analyse the source . I could not find anything. I was pretty new to bash type of website. I thought reading about them more. I found something very intresting.</p>
 
-<blockquote>" I may be an alert() , when I will be a big bang! "</blockquote>
+<p>The easiest way to test a web server via HTTP request is to inject the bash command through the user agent. Refer for <a href="http://security.stackexchange.com/questions/68139/attack-scenarios-of-the-new-bash-vulnerability">info</a>.</p>
 
-<p>The challenge is available in <a href="https://xss-game.appspot.com/level2">xss-game</a> hosted by google.<p>
+<blockquote>wget -U '() { :;}; /bin/bash -c "any shell command"' url
 
-<p>It would be an intresting challenge to solve . I will come up will the solution in my next blog.<p>
-
-<p>The solution for the first blog is quite simple</p>
-
-<blockquote>&#x3C;srcipt&#x3E;alert(1)&#x3C;/script&#x3E;</blockquote>
-
-<p>Stay tuned!<br /> Untill we come with our another blog!</p>
-
-
-
-
-
-</p></p></p></p>
+<p>Thank you for reading the blog! </p>
+</blockquote>
 
 
                 <hr>
@@ -145,13 +133,9 @@ One xss bug in google can give you $7500. </p>
                 <ul class="pager">
                     
                     <li class="previous">
-                        <a href="/2015/09/13/test-post/" data-toggle="tooltip" data-placement="top" title="Must read blogs for web security researchers!">&larr; Previous Post</a>
+                        <a href="/2015/10/20/hitconweb100/" data-toggle="tooltip" data-placement="top" title="Web 100 baby first">&larr; Previous Post</a>
                     </li>
                     
-                    
-                    <li class="next">
-                        <a href="/2015/10/04/DCTF/" data-toggle="tooltip" data-placement="top" title="Dctf Ctf">Next Post &rarr;</a>
-                    </li>
                     
                 </ul>
 

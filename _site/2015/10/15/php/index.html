@@ -17,9 +17,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="The official blog of I4INFO, Knowledge for the better future!">
 
-    <title>Xss is old but gold! - I4INFO</title>
+    <title>Php comparison operator - I4INFO</title>
 
-    <link rel="canonical" href="http://i4info.in//2015/09/13/web-security/">
+    <link rel="canonical" href="http://i4info.in//2015/10/15/php/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -85,16 +85,16 @@
 
 
     <!-- Post Header -->
-<header class="intro-header" style="background-image: url('/img/post-bg-02.jpg')">
+<header class="intro-header" style="background-image: url('/img/post-bg-02.png')">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <div class="post-heading">
-                    <h1>Xss is old but gold!</h1>
+                    <h1>Php comparison operator</h1>
                     
-                    <h2 class="subheading">Google xss challenge!</h2>
+                    <h2 class="subheading">Vulnerability regarding the == operator in php</h2>
                     
-                    <span class="meta">Posted by Heeraj on September 13, 2015</span>
+                    <span class="meta">Posted by Heeraj on October 15, 2015</span>
                 </div>
             </div>
         </div>
@@ -114,30 +114,19 @@
 <script>
 (adsbygoogle = window.adsbygoogle || []).push({});
 </script></p>
-<p> If you like to read our old blogs you are welcome, <a href="http://heeraj123.wordpress.com">I4INFO</a> Want to be a member of our team, contact us! </p>
+<p> If you like to read our old blogs you are welcome, <a href="http://heeraj123.wordpress.com">I4INFO</a> </p>
 
-<p>Xss - cross site scripting, may be an old security bug but what it can do is even dangerous in todays senario.</p>
+<p>Ya in this blog I would like to discuss, the ASIS Ctf question "Impossible".I didn't solve this during the competition time, the problem was awesome. </p>
 
-<p>Its intresting if someone is wants to learn xss. Its a good chance now the google is hosting xss challenge by them.
-One xss bug in google can give you $7500. </p>
+<p>Most of the ctf the robots.txt file would be an area where some hint would be present. Ya in the case of ASIS, the 2 problem was given in the robots.txt.</p>
 
-<blockquote>" I may be an alert() , when I will be a big bang! "</blockquote>
+<p>This is awesome problem problem, and new attack for me to learn, this was based on vulnerability in the php equal operator or you can say hash collition attack. Thanks to the dragon sector team for their <a href="http://gynvael.coldwind.pl/?id=492">blog</a> on this. Based on the users.dat file given, one can find that md5 equality operation in the get_user() was the reason behind getting the flag.</p>
 
-<p>The challenge is available in <a href="https://xss-game.appspot.com/level2">xss-game</a> hosted by google.<p>
+<p>Anyway the main reason behind the bypass of the equal to operation was because php return the true when the hashes starting with "0e" are compared.Already a username in the users.dat is starting with 0e. So the motive of us was to find the another string whose hash starts with "0e".</p>
 
-<p>It would be an intresting challenge to solve . I will come up will the solution in my next blog.<p>
+<p>This was an awesome problem, thanks to the <a href="http://nandynarwhals.org/2015/10/12/asis-ctf-finals-2015-impossible-web/"> ctftime writeup</a> on this. Once you get another string whose hash starts with 0e, you can register with that user. That would give the password of the users.dat 's registered user. Thus we can login with the old username this password.</p>
 
-<p>The solution for the first blog is quite simple</p>
-
-<blockquote>&#x3C;srcipt&#x3E;alert(1)&#x3C;/script&#x3E;</blockquote>
-
-<p>Stay tuned!<br /> Untill we come with our another blog!</p>
-
-
-
-
-
-</p></p></p></p>
+<p>Thank you for reading the blog! </p>
 
 
                 <hr>
@@ -145,12 +134,12 @@ One xss bug in google can give you $7500. </p>
                 <ul class="pager">
                     
                     <li class="previous">
-                        <a href="/2015/09/13/test-post/" data-toggle="tooltip" data-placement="top" title="Must read blogs for web security researchers!">&larr; Previous Post</a>
+                        <a href="/2015/10/06/xss-solution/" data-toggle="tooltip" data-placement="top" title="Xss challenge solution!!">&larr; Previous Post</a>
                     </li>
                     
                     
                     <li class="next">
-                        <a href="/2015/10/04/DCTF/" data-toggle="tooltip" data-placement="top" title="Dctf Ctf">Next Post &rarr;</a>
+                        <a href="/2015/10/20/hitconweb100/" data-toggle="tooltip" data-placement="top" title="Web 100 baby first">Next Post &rarr;</a>
                     </li>
                     
                 </ul>

