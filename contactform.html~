@@ -122,7 +122,6 @@ h1 {margin-bottom:20px; text-align:center;font-size:48px; text-shadow:0 1px 0 #e
 </style>
 </head>
 <body>
-    
     <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
     <!-- ad -->
     <ins class="adsbygoogle"
@@ -131,8 +130,6 @@ h1 {margin-bottom:20px; text-align:center;font-size:48px; text-shadow:0 1px 0 #e
          data-ad-slot="5956699124"
          data-ad-format="auto"></ins>
     <script>
-    (adsbygoogle = window.adsbygoogle || []).push({});
-    </script> 
 	<div id="wrap">
 		<h1>Send a message</h1>
 		<div id='form_wrap'>
