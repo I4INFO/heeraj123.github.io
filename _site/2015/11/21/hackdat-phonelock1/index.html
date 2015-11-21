@@ -17,9 +17,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="The official blog of I4INFO, Knowledge for the better future!">
 
-    <title>I4INFO</title>
+    <title>Web 150 Math Quiz - I4INFO</title>
 
-    <link rel="canonical" href="http://i4info.in//page2/">
+    <link rel="canonical" href="http://i4info.in//2015/11/21/hackdat-phonelock1/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -83,120 +83,69 @@
 </nav>
 
 
-    <!-- Page Header -->
-<header class="intro-header" style="background-image: url('/img/home-bg.jpg')">
+    <!-- Post Header -->
+<header class="intro-header" style="background-image: url('/img/post-bg-02.png')">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="site-heading">
-                    <h1>I4INFO</h1>
-                    <span class="subheading">Web Security Enthusiast , Blogger and Devolper!!</span>
+                <div class="post-heading">
+                    <h1>Web 150 Math Quiz</h1>
+                    
+                    <h2 class="subheading">Hack that Ctf</h2>
+                    
+                    <span class="meta">Posted by Heeraj on November 21, 2015</span>
                 </div>
             </div>
         </div>
     </div>
 </header>
 
-<!-- Main Content -->
-<div class="container">
-	<div class="row">
-		<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-			<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+				<script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
 <!-- ad -->
-<ins class="adsbygoogle"
-	     style="display:block"
-	          data-ad-client="ca-pub-0540814478217300"
-		       data-ad-slot="5956699124"
-		            data-ad-format="auto"></ins>
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-0540814478217300" data-ad-slot="5956699124" data-ad-format="auto"></ins>
 <script>
 (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
+</script></p>
+<p> If you like to read our old blogs you are welcome, <a href="http://heeraj123.wordpress.com">I4INFO</a> </p>
 
-<div class="post-preview">
-    <a href="/2015/10/06/xss-solution/">
-        <h2 class="post-title">Xss challenge solution!!</h2>
-        
-        <h3 class="post-subtitle">
-            Google xss challenge Solution!
-        </h3>
-        
-    </a>
-    <p class="post-meta">Posted by Heeraj on October 6, 2015</p>
-</div>
-<hr>
+<p>This CTF challenge math quiz, there was website in which question were displayed, whenever we refresh a random question would be displayed. That there would be a random function running behind. </p>
 
-<div class="post-preview">
-    <a href="/2015/10/04/DCTF/">
-        <h2 class="post-title">Dctf Ctf</h2>
-        
-        <h3 class="post-subtitle">
-            Experience of DCTF
-        </h3>
-        
-    </a>
-    <p class="post-meta">Posted by Heeraj on October 4, 2015</p>
-</div>
-<hr>
+<p>I saw something intresting when we select the correct option we could see a error message in the website , which show there is eval() function.</p>
 
-<div class="post-preview">
-    <a href="/2015/09/13/web-security/">
-        <h2 class="post-title">Xss is old but gold!</h2>
-        
-        <h3 class="post-subtitle">
-            Google xss challenge!
-        </h3>
-        
-    </a>
-    <p class="post-meta">Posted by Heeraj on September 13, 2015</p>
-</div>
-<hr>
+<p>So I thought , we could get shell by eval, so I decided to intercept the request using burp. I intrecepted the request which is sent when we click the option. There was a hint in the question that he has hidden something inside the question. </p>
 
-<div class="post-preview">
-    <a href="/2015/09/13/test-post/">
-        <h2 class="post-title">Must read blogs for web security researchers!</h2>
-        
-        <h3 class="post-subtitle">
-            Login as admin. And get the flag! The flag is the password of admin.
-        </h3>
-        
-    </a>
-    <p class="post-meta">Posted by Heeraj on September 13, 2015</p>
-</div>
-<hr>
+<p>When I intercepted the option I found that the there was 5 parameter that is 4 parameter index and one question,
+the index was showing the current question's index. While Changing the index you can get all the index, we can find that there are 7 question. As a fun , I just gave index 0 , that was very intresting one of the option in that was the flag</p>
 
-<div class="post-preview">
-    <a href="/2015/09/13/writeup/">
-        <h2 class="post-title">MMA ctf writeup2</h2>
-        
-        <h3 class="post-subtitle">
-            Login as admin2!
-        </h3>
-        
-    </a>
-    <p class="post-meta">Posted by Heeraj on September 13, 2015</p>
-</div>
-<hr>
+<p>The above one was lucky way! But the correct was to first get the dump, that you can get by clicking the error message. The same as above intercept the request , see the code there you have a filter function. So here you has to use some trick , to run function</p>
+
+<p>You have to provide the parameter $question=phpinfo/**/(), to run the function and get the shell, this is the right way.</p>
+
+<p>Thank you for reading the blog! </p>
 
 
-<!-- Pager -->
+                <hr>
 
-<ul class="pager">
-    
-    <li class="previous">
-        <a href="/">&larr; Newer Posts</a>
-    </li>
-    
-    
-    <li class="next">
-        <a href="/page3">Older Posts &rarr;</a>
-    </li>
-    
-</ul>
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/2015/11/21/hackdat-mathquiz/" data-toggle="tooltip" data-placement="top" title="Web 50 Phone lock 1">&larr; Previous Post</a>
+                    </li>
+                    
+                    
+                </ul>
 
-
-		</div>
-	</div>
-</div>
+            </div>
+        </div>
+    </div>
+</article>
 
 <hr>
 
