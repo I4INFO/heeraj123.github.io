@@ -44,3 +44,6 @@ header-img: "img/post-bg-01.jpg"
 
 <p>Read our website for further security Info in future</p>
 
+<div id="disqus_thread"></div>
+{% if post.comments %}
+{% endif %}

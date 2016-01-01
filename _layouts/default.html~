@@ -6,6 +6,9 @@
 
     {% include nav.html %}
     {{ content }}
+    <div id="disqus_thread"></div>
+    {% if post.comments %}
+    {% endif %}
     {% include footer.html %}
 
 </body>
