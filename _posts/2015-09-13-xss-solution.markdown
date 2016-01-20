@@ -6,16 +6,7 @@ date:       2015-10-06 16:47:00
 author:     "Heeraj"
 header-img: "img/post-bg-02.jpg"
 ---
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- ad -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-0540814478217300"
-     data-ad-slot="5956699124"
-     data-ad-format="auto"></ins>
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({});
-</script>
+
 <p> If you like to read our old blogs you are welcome, <a href="http://heeraj123.wordpress.com">I4INFO</a> </p>
 
 <p>Google XSS challenge solution!</p>

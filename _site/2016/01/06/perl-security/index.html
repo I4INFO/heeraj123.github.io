@@ -37,9 +37,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="The official blog of I4INFO, Knowledge for the better future!">
 
-    <title>MMA ctf writeup2 - I4INFO</title>
+    <title>Security Issue in perl scripts - I4INFO</title>
 
-    <link rel="canonical" href="http://i4info.in//2015/09/13/writeup/">
+    <link rel="canonical" href="http://i4info.in//2016/01/06/perl-security/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -102,16 +102,16 @@
 </nav>
 
     <!-- Post Header -->
-<header class="intro-header" style="background-image: url('/img/post-bg-02.jpg')">
+<header class="intro-header" style="background-image: url('/img/post-bg-02.png')">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <div class="post-heading">
-                    <h1>MMA ctf writeup2</h1>
+                    <h1>Security Issue in perl scripts</h1>
                     
-                    <h2 class="subheading">Login as admin2!</h2>
+                    <h2 class="subheading">Security flaws</h2>
                     
-                    <span class="meta">Posted by Heeraj on September 13, 2015</span>
+                    <span class="meta">Posted by Heeraj on January 6, 2016</span>
                 </div>
             </div>
         </div>
@@ -124,17 +124,26 @@
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 
-				<p> If you like to read our old blogs you are welcome, <a href="http://heeraj123.wordpress.com">I4INFO</a> Want to be a member of our team, contact us! </p>
+				<p> If you like to read our old blogs you are welcome, <a href="http://heeraj123.wordpress.com">I4INFO</a> </p>
 
-<p>This was something unusual , when I saw it I thought by seeing it would be an injection , tried all the stuff. Didn't work , and was waiting for the writeup in ctftime.</p>
+<p>Happy new year readers! One of the domain, where I didn't have look would the perl security issue. So I thought to have a blog on that. I would like to mention,that as language no language has inbuilt security issue's, its the devolper who makes all the issue, same is with the perl. Some bad habits, that makes creates the problem, this can help even the hacker's to take down your system.</p>
 
-<p>When the writeup came it was intresting , it was some crlf , which means " Carriage Return and Line Feed ". That is something new for me , and something to learn. When I googled I found that is something which is simple and but has affectd in many pages in google adsense .</p>
+<p>Many problem, is validation every input should be properly validated, thus you can avoid most of the troubles. Perl is known as "glue language" , as it make other work for it. For that perl uses two function system() and exec().</p>
 
-<p>\n means line feed and \r means carrige return. %0d is carriage return and %0a is line feed. And here the problem is about memcache it is distributed memory caching system. The main aim is to obtain the flag , for that we look for memcache commands.</p>
+<blockquote>system ("cat /usr/stats/$username");</blockquote>
 
-<blockquote>curl "http://login2.chal.mmactf.link/" --cookie "ss=%0d%0aget 770e33cbe1d236a5233adacd95995e2f8ca71a21b65eb756d7f894647b6168c2"</blockquote>
+<p>Think that above $username comes from get parameter, if there is no proper validation. Destructive minded user can pass the value ";rm -rf /*". "THE END". One way to avoid this is by.</p>
 
-<blockquote> curl "http://login2.chal.mmactf.link/" --cookie "ss=%0d%0aset adminkey 0 3600 20%0d%0a{\"username\":\"admin\"}"</blockquote>
+<blockquote>system ("cat", "/usr/stats/$username");</blockquote>
+
+<p>Here the ";rm -rf /*" will not be wrking but chance of getting the detal by passing "../../etc/passwd". This is much more better since there is no shell here. This applies for both exec and system.</p>
+
+<p>One common problem is that some versions of the Unix "mail" utility will execute a shell command when they see the ~! escape sequence in particular contexts. Thus, user input containing "~!rm -rf *" on a blank line in a message body may cause trouble under certain circumstances.</p>
+
+<p>The above one was lucky way! But the correct was to first get the dump, that you can get by clicking the error message. The same as above intercept the request , see the code there you have a filter function. So here you has to use some trick , to run function</p>
+
+<p>Rest about the perl security will be soon be updated</p>
+<p>Thank you for reading the blog! </p>
 
                 <div id="disqus_thread"></div>
                 
@@ -143,12 +152,12 @@
                 <ul class="pager">
                     
                     <li class="previous">
-                        <a href="/2015/09/08/test-post/" data-toggle="tooltip" data-placement="top" title="MMA CTF - Login as admin! Writeup!">&larr; Previous Post</a>
+                        <a href="/2015/11/21/shellshock/" data-toggle="tooltip" data-placement="top" title="Web 150 Math Quiz">&larr; Previous Post</a>
                     </li>
                     
                     
                     <li class="next">
-                        <a href="/2015/09/13/test-post/" data-toggle="tooltip" data-placement="top" title="Must read blogs for web security researchers!">Next Post &rarr;</a>
+                        <a href="/2016/01/06/wehacking-kr/" data-toggle="tooltip" data-placement="top" title="Security Issue in perl scripts">Next Post &rarr;</a>
                     </li>
                     
                 </ul>

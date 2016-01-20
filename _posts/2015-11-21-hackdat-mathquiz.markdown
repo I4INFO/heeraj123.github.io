@@ -6,16 +6,7 @@ date:       2015-11-21 13:45:00
 author:     "Heeraj"
 header-img: "img/post-bg-02.png"
 ---
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- ad -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-0540814478217300"
-     data-ad-slot="5956699124"
-     data-ad-format="auto"></ins>
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({});
-</script>
+
 <p> If you like to read our old blogs you are welcome, <a href="http://heeraj123.wordpress.com">I4INFO</a> </p>
 
 <p>This CTF challenges were good and easy I didn't that good. I was able to solve 2 Questions that both were easy.</p>

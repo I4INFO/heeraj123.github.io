@@ -6,16 +6,7 @@ date:       2015-09-08 11:12:00
 author:     "Heeraj"
 header-img: "img/post-bg-01.jpg"
 ---
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- ad -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-0540814478217300"
-     data-ad-slot="5956699124"
-     data-ad-format="auto"></ins>
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({});
-</script>
+
 <p>This is my first post in our I4INFO website. If you like to read our old blogs you are welcome, <a href="http://heeraj123.wordpress.com">I4INFO</a> Want to be a member of our team, contact us!</p>
 
 <p>It was an start for the ctf , the first problem which I looked upon, by seeing the login page!the first thing that came in my mind is sql injection.</p>

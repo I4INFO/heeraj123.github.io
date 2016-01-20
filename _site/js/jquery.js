@@ -8,16 +8,6 @@
   ga('send', 'pageview');
 
 </script>
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- ad -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-0540814478217300"
-     data-ad-slot="5956699124"
-     data-ad-format="auto"></ins>
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({});
-</script>
 /*!
  * jQuery JavaScript Library v2.1.3
  * http://jquery.com/
