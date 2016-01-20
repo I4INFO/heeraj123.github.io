@@ -1,8 +1,8 @@
 ---
 layout:     post
-title:      "Security Issue in perl scripts"
-subtitle:   "Security flaws"
-date:       2016-01-06 14:00:00
+title:      "Webhacking Kr"
+subtitle:   "Solutions"
+date:       2016-01-20 14:00:00
 author:     "Heeraj"
 header-img: "img/post-bg-02.png"
 ---
