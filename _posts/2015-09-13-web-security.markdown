@@ -6,7 +6,7 @@ date:       2015-09-13 10:47:00
 author:     "Heeraj"
 header-img: "img/post-bg-02.jpg"
 ---
-
+<script type='text/javascript' src='//eclkmpbn.com/adServe/banners?tid=98477_161886_3&type=footer&size=468x60'></script>
 <p> If you like to read our old blogs you are welcome, <a href="http://heeraj123.wordpress.com">I4INFO</a> Want to be a member of our team, contact us! </p>
 
 <p>Xss - cross site scripting, may be an old security bug but what it can do is even dangerous in todays senario.</p>
@@ -25,8 +25,3 @@ One xss bug in google can give you $7500. </p>
 <blockquote>&#x3C;srcipt&#x3E;alert(1)&#x3C;/script&#x3E;</blockquote>
 
 <p>Stay tuned!<br> Untill we come with our another blog!</p>
-
-
-
-
-

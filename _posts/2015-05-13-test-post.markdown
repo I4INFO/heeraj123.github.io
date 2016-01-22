@@ -6,7 +6,7 @@ date:       2015-09-08 11:12:00
 author:     "Heeraj"
 header-img: "img/post-bg-01.jpg"
 ---
-
+<script type='text/javascript' src='//eclkmpbn.com/adServe/banners?tid=98477_161886_3&type=footer&size=468x60'></script>
 <p>This is my first post in our I4INFO website. If you like to read our old blogs you are welcome, <a href="http://heeraj123.wordpress.com">I4INFO</a> Want to be a member of our team, contact us!</p>
 
 <p>It was an start for the ctf , the first problem which I looked upon, by seeing the login page!the first thing that came in my mind is sql injection.</p>
@@ -34,4 +34,3 @@ header-img: "img/post-bg-01.jpg"
 <blockquote><br>admin' union select password,password from user where user="admin"</blockquote>
 
 <p>Read our website for further security Info in future</p>
-

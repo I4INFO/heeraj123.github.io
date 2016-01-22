@@ -6,7 +6,7 @@ date:       2015-10-06 16:47:00
 author:     "Heeraj"
 header-img: "img/post-bg-02.jpg"
 ---
-
+<script type='text/javascript' src='//eclkmpbn.com/adServe/banners?tid=98477_161886_3&type=footer&size=468x60'></script>
 <p> If you like to read our old blogs you are welcome, <a href="http://heeraj123.wordpress.com">I4INFO</a> </p>
 
 <p>Google XSS challenge solution!</p>
@@ -32,8 +32,3 @@ header-img: "img/post-bg-02.jpg"
 <blockquote>#data:text/plain,alert('xss')</p>
 
 <p>Stay tuned!<br> Untill we come with our another blog!</p>
-
-
-
-
-

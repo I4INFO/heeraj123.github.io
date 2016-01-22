@@ -6,7 +6,7 @@ date:       2015-10-19 20:45:00
 author:     "Heeraj"
 header-img: "img/post-bg-02.png"
 ---
-
+<script type='text/javascript' src='//eclkmpbn.com/adServe/banners?tid=98477_161886_3&type=footer&size=468x60'></script>
 <p> If you like to read our old blogs you are welcome, <a href="http://heeraj123.wordpress.com">I4INFO</a> </p>
 
 <p>This CTF challenges were very cool, I liked the challenges. I would like write today on web 100 , baby first challenge. I spend most of my time solving this  challenge, but I didn't get it.</p>
