@@ -8,7 +8,6 @@
   ga('send', 'pageview');
 
 </script>
-<script type='text/javascript' src='//eclkmpbn.com/adServe/banners?tid=98477_161886_3&type=footer&size=468x60'></script>
 /*!
  * jQuery JavaScript Library v2.1.3
  * http://jquery.com/
