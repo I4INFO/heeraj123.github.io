@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      "Web 50 Phone lock 1"
+title:      "Math quiz(Web)"
 subtitle:   "Hack that Ctf"
 date:       2015-11-21 13:45:00
 author:     "Heeraj"
