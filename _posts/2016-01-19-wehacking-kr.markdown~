@@ -110,24 +110,6 @@ Local file inclusion. Use %00 can be used for local file inclusion<br>
 eg: password.php%00<br>
 In the case of windows u have to use ? or ;
 </p>
-
-<p>Webhacking Challenge 28</p>
-
-<p>In this challenge , you have to view the password , which can only be done if you have a .htaccess file.The content of the file is given below.</p>
-
-<blockquote>
-php_flag engine off<br>
-AddType text/plain php|<br>
-</blockquote>
-
-<p>Webhacking Challenge 29</p>
-
-<p>Only way to bypass passing the lv as admin. Which can be done as we have insert option.So adding that is easily possible, but the problem would code can easily detect the admin. So we have to use a reverse function.You have 2 input spaces, in first field you have to input id can be anything, and phone can also be anything. So the only thing which is more important is to change is to make admin. The only way is to misuse insert.</p>
-
-<blockquote>
-id: nimda<br>
-phone: 123,reverse(id)),(1,1<br>
-</blockquote>
 <p>I will come with next part of solution with in days</p>
 
 <p>Thank you for reading the blog! </p>
