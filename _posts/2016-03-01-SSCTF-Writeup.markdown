@@ -2,7 +2,7 @@
 layout:     post
 title:      "SSCTF Angular Js Bypass"
 subtitle:   "XSS"
-date:       2016-02-29 21:00:00
+date:       2016-03-01 21:00:00
 author:     "Heeraj"
 header-img: "img/post-bg-02.png"
 ---
