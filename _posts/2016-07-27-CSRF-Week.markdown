@@ -1,0 +1,29 @@
+---
+layout:     post
+title:      "Disecting CSRF"
+subtitle:   "Cross Origin Request Forgery"
+date:       2016-07-27 11:00:00
+author:     "Heeraj"
+header-img: "img/post-bg-02.png"
+---
+<script type='text/javascript' src='//eclkmpbn.com/adServe/banners?tid=98477_161886_3&type=footer&size=468x60'></script>
+<p>It has been long time, I have blogged and I am having a plan to increase the blog count more. I was busy in some other stuff
+,but today I will discussing about one of the oldest attack vector and still alive attack. This attack can been seen the most 
+in real world. It is one of the most reported bug in bug hunting sites like hackerone and bug crowd. It is none other than CSRF
+- Cross Site request Forgery attack.<p>
+
+<p>This attack has created very much confusion for the people, the attack is very much misunderstood by the most. Let us come
+to the attack. Imagine you are logged into some site xyz.com, you site has an simple form to change the password which only 
+asks for new password. In the other tab, you got an mail, mail says "Click me to win prize". By seeing this you click this and 
+an website in loaded in next tab. Nothing happens and you close it, when you return to the xyz.com, after logging out of the 
+session and trying for login. You observe that you are not able to login. The question is where you have been attacked?<p>
+
+<p>My answer would a big yes, the mail you received was simple social engineering attack. Now let me tell you what really 
+happend, when you recieved an mail and you clicked in it. When new website was loaded in other tab, it submits the password 
+form through the javascript embedded in it. This attack is quite common, but the intensity of the attack varies on different
+point. The attack is most vulnerable in points like password reset, deletion, transactions, code injections and many more. 
+The combinations of the XSS and CSRF can make it more worser.<p>
+
+<p>The attack can be stopped by using CSRF token, but the csrf token should be random and should not be predictable otherewise
+ there is no use for the token. I will updating the post as much possible, stay tunned!!<p>
+
