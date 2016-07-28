@@ -2,7 +2,7 @@
 layout:     post
 title:      "Same Origin Policy"
 subtitle:   "Intro and classic attacks"
-date:       2016-07-02 11:00:00
+date:       2016-07-28 11:00:00
 author:     "Heeraj"
 header-img: "img/post-bg-02.png"
 ---
