@@ -25,4 +25,6 @@ Allow-Credentials setting that to true and even the client while sending the req
 
 <h2 class="section-heading">Continuing with SOP</h2>
 
-<p>There are many ways SOP been used in java, Adobe Reader, Flash etc have different SOP implication, most of them have suffered from SOP bypasses. Example Java consider 2 different domains with the same ip as same origin. In adobe plugins the SOP bypass has lead to even arbitary code executions, so the security is much higher.<p>
+<p>There are many ways SOP been used in java, Adobe Reader, Flash etc have different SOP implication, most of them have suffered from SOP bypasses. Example Java consider 2 different domains with the same ip as same origin. In adobe plugins the SOP bypass has lead to even arbitary code executions, so the security is much higher. Adobe flash offers a method to allow cross-origin communication using crossdomain.xml, which should exist in root of the website.Even the java and silverlight uses the same.<p>
+
+<p>Will update the blog!! Stay tunned.</p>
