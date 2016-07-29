@@ -1,7 +1,7 @@
 ---
 layout:     post
-title:      "Same Origin Policy"
-subtitle:   "Intro and classic attacks"
+title:      "PHP Vulnerable Functions"
+subtitle:   "Listing the functions leading to RCE"
 date:       2016-07-28 11:00:00
 author:     "Heeraj"
 header-img: "img/post-bg-02.png"
