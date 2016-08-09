@@ -26,4 +26,6 @@ The combinations of the XSS and CSRF can make it more worser.<p>
 
 <p>The attack can be stopped by using CSRF token, but the csrf token should be random and should not be predictable otherewise
  there is no use for the token. You can try for the root-me challenge CSRF - 0 Protection, there you can find a website with contact option. Where user can send their messages, that is vulnerable to HTML injection and profile form is vulnerable to Cross site request foregery. Thus with the combination of both, one can upload HTML file which result in automatic submission of form when admin visits. You can check my <a href="https://gist.github.com/heeraj123/7c5c8e011dc6b1f225ae9a174c198fd8">payload</a>.<p>
+ 
+ <p>Added the solutions of the <a href="pentesteracademylab.appspot.com/lab/webapp/csrf/1">pentester academy</a> challenges in <a href="https://github.com/heeraj123/CSRF">github</a>. Try to solve the challenges to get the good idea on CSRF.</p>
 
