@@ -7,7 +7,7 @@ author:     "Heeraj"
 header-img: "img/post-bg-02.png"
 ---
 <script type='text/javascript' src='//eclkmpbn.com/adServe/banners?tid=98477_161886_3&type=footer&size=468x60'></script>
-<p>Bio terra CTF was good for us, I have managed to solve 2 web challenges which is was easy one was SQL Injection and another
+<p>Bio terra CTF was good for us, I have managed to solve 2 web challenges which was easy, one was SQL Injection and another
 one was local file inclusion.</p>
 
 <h2 class="section-heading">Web - 50</h2>
