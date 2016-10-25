@@ -25,7 +25,7 @@ header-img: "img/post-bg-02.png"
 
 <p>In this challenge, you have to break repeated Xor. This challenge, I took a lot of time because of the edit distance or the hamming distance. Don't see the definition of the hamming distance in wikipedia, it's actually the difference between the bits of 2 string. In the question, they have mentioned about the hamming distance of 2 example string, make sure your function returns that. Next thing is finding the keysize using the hamming distance and normalising it by dividing it with keysize. Then you have to transpose the blocks and get the key. </p>
 
-<h2 class="section-heading">Challenge 7</h2>
+<h2 class="section-heading">Challenge 7, 8</h2>
 
 <p>In challenge 7,for AES encryption in ECB mode, you can use an python module or openssl in command line. Detect ECB is quite easy, you need to find out pattern which is repeating, it's quite easy. </p>
 
