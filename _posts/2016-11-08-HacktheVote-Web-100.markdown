@@ -12,3 +12,7 @@ I will discussing today on web200 challenge. This was a combo attack, with Remot
 
 <h2 class="section-heading">Clue 1</h2>
 <p>I was fussing through the website, I found there was directory traversal.</p>
+
+<a href="#">
+    <img src="{{ site.baseurl }}/img/directory.png" alt="Post Sample Image">
+</a>
