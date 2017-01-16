@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<canvas id="myCanvas" width="400" height="200" style="border:1px solid #d3d3d3;">
+Your browser does not support the HTML5 canvas tag.</canvas>
+<script src="http://lig-membres.imag.fr/donsez/cours/exemplescourstechnoweb/js_securehash/md5.js"></script>
+<script>
+var c = document.getElementById("myCanvas");
+var ctx = c.getContext("2d");
+var txt = "Amrita Privacy checker";
+ctx.textBaseline = "top";
+// The most common type
+ctx.font = "14px 'Arial'";
+ctx.textBaseline = "alphabetic";
+ctx.fillStyle = "#f60";
+ctx.fillRect(125,1,62,20);
+// Some tricks for color mixing to increase the difference in rendering
+ctx.fillStyle = "#069";
+ctx.fillText(txt, 2, 15);
+ctx.fillStyle = "rgba(102, 204, 0, 0.7)";
+ctx.fillText(txt, 4, 17);
+var dataURL = c.toDataURL();
+var hash = calcMD5(dataURL);
+alert("Your Fingerprint :" + hash); 
+</script>
+
+<p><strong>Note:</strong> The canvas tag is not supported in Internet 
+Explorer 8 and earlier versions.</p>
+
+</body>
+</html>
