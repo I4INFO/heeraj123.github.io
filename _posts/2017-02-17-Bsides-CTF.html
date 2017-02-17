@@ -51,7 +51,7 @@ http://zumbo-8ac445b1.ctf.bsidessf.net/%3Cscript%3Ealert('XSS')%3C/script%3E
 <p>But we can't do anything with the cross site scripting, we need to read the file. I was looking for way to read the file, since there is render engine and flask working definetly the next option in SSTI - Server Side Template Injection. Wow!! And it worked.</p>
 
 <blockquote>
-http://zumbo-8ac445b1.ctf.bsidessf.net/{{3+3}}
+http://zumbo-8ac445b1.ctf.bsidessf.net/%7B%7B%203+3 %7B%7B%20
 </blockquote>
 
 <a href="#">
