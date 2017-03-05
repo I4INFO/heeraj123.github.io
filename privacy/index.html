@@ -1,0 +1,60 @@
+<html>
+    <head>
+        <title>My Browser Info</title>
+    </head>
+    <script src="battery.js"></script>
+    <script src='ads.js'></script>
+    <body>
+        <table style="width:100%">
+            <tr>
+               <th>Attribute</th>
+               <th>Value</th>
+            </tr>
+            <tr>
+                <td>User Agent</td>
+                <td><script>document.write(navigator.userAgent);</script></td>
+            </tr>
+            <tr>
+                <td>Screen Resolution</td>
+                <td><script>document.write(screen.width + "X" +screen.availHeight + "X" + screen.width);</script></td>
+            </tr>
+            <tr>
+                <td>Platform</td>
+                <td><script>document.write(navigator.platform)</script></td>
+            </tr>
+            <tr>
+                <td>Languages</td>
+                <td><script>document.write(navigator.languages)</script></td>
+            </tr>
+            <tr>
+                 <td>Ad Block</td>
+                <td><script type="text/javascript">
+                        if(document.getElementById('QdXyVMqReNZx')){ document.write('No'); } else {
+                        document.write('Yes'); } 
+                </script></td>
+            </tr>
+            <tr>
+                <td>Charging</td>
+                <td><div id="charging"></div></td>
+            </tr>
+            <tr>
+                <td>Level</td>
+                <td><div id="level"></div></td>
+            </tr>
+            <tr>
+                <td>Discharging Time</td>
+                <td><div id="dischargingTime"</td>
+            </tr>
+            <tr>
+                <td>Cookie Enabled</td>
+                <td><script>document.write(navigator.cookieEnabled)</script></td>
+            </tr>
+            <tr>
+                <td>App Version</td>
+                <td><script>document.write(navigator.appVersion)</script></td>
+            </tr>
+        </table>
+    </body>
+</html>
+
+
