@@ -13,6 +13,7 @@
     <script src="login.js"></script>
     <script src="canvas.js"></script>
     <body>
+      <script src="plugin.js"></script>
       <script src="battery.js"></script>
       <script src='rollups/md5.js'></script>
       <script src='fontdetect.js' type="text/javascript"></script>
@@ -129,6 +130,10 @@
                   <td><canvas id="myCanvas" width="400" height="200" style="border:1px solid #d3d3d3;">
                     Your browser does not support the HTML5 canvas tag.</canvas><div id='hash'>The hash is <script>
                     document.write(generateHash())</script></div></td>
+              </tr>
+              <tr>
+                  <td>Plugins Installed</td>
+                  <td id="plugins"></td>
               </tr>
           </table>
         </div>
