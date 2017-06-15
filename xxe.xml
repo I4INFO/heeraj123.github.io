@@ -1,10 +1,10 @@
 <EntityDescriptor ID="_2240bd9c-30c4-4d2a-ab3e-87a94ea334fd" entityID="http://some.entity.id"
         xmlns="urn:oasis:names:tc:SAML:2.0:metadata">
-        <SPSSODescriptor WantAssertionsSigned="true" protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol">
+        <ssoDescriptor WantAssertionsSigned="true" protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol">
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
    <xsl:template match="/">
        <xsl:value-of select="document('/sys/power/image_size')">
    </xsl:value-of></xsl:template>
 </xsl:stylesheet>
-                </SPSSODescriptor>
+                </ssoDescriptor>
 </EntityDescriptor>
