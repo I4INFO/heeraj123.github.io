@@ -5,7 +5,7 @@ csrf_header = new Headers();
 csrf_header.append('CSRF-Protection', '1');
 
 function sendMessage(msg) {
-  var url = '/message?msg=' + encodeURIComponent(msg)
+  var url = 'https://joe.web.ctfcompetition.com/message?msg=' + encodeURIComponent(msg)
   if (window.last_recaptcha_widget !== undefined) {
     url += '&captcha=' + encodeURIComponent(grecaptcha.getResponse(window.last_recaptcha_widget));
     delete window.last_recaptcha_widget;
