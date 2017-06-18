@@ -10,7 +10,7 @@ function sendMessage(msg) {
     url += '&captcha=' + encodeURIComponent(grecaptcha.getResponse(window.last_recaptcha_widget));
     delete window.last_recaptcha_widget;
   }
-  fetch(url, {headers: csrf_header, credentials: 'include'});
+  fetch(url, {headers: csrf_header, credentials: 'include', method: 'get'});
 }
  
 sendMessage("let me rename you");
