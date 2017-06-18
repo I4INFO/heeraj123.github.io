@@ -10,7 +10,7 @@ csrf_header.append('CSRF-Protection', '1');
 function httpGet()
 {
     var xmlHttp = new XMLHttpRequest();
-    xmlHttp.open( "GET", 'https://joe.web.ctfcompetition.com', false ); // false for synchronous request
+    xmlHttp.open( "GET", 'https://joe.web.ctfcompetition.com', true ); // false for synchronous request
     xmlHttp.setRequestHeader( 'Access-Control-Allow-Origin', '*');
     xmlHttp.withCredentials = false;
     xmlHttp.send( null );
