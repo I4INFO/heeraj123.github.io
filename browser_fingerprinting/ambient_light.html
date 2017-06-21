@@ -119,7 +119,7 @@
 </html>t
       <script>
          function updateLightLevel(lightLevel) {
-            document.getElementById('dl-value').innerHTML = Math.round(lightLevel);
+            document.getElementById('dl-value').innerHTML = lightLevel;
             if (lightLevel < 50) {
                document.body.className = 'dark-theme';
             } else if (lightLevel < 10000) {
