@@ -16,8 +16,6 @@ function geo_detect(){
                     var locationName = JSON.parse(xhttp2.responseText).results;
                     console.log(locationName)
                     el.innerHTML += '<b>Location Name:</b> ' + locationName[0].formatted_address + '<br>';
-                    el.innerHTML += '<b>Languages:</b> ' + languages(navigator.languages || navigator.language 
-                    || navigator.userLanguage) + '<br>';
                     el.innerHTML += '<b>Local Time:</b> ' + new Date();
                 }
             };
