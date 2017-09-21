@@ -1,0 +1,21 @@
+<html>
+
+<head>
+<title>HTML5 fullscreen API fingerprinter</title>
+<script>
+function fingerprint() {
+  document.getElementById('x').mozRequestFullScreen();
+  setTimeout(function(){ window.alert(screen.width + "x" + screen.height); }, 1000);
+}
+</script>
+</head>
+
+<body onclick="fingerprint()">
+<h1 id="x">click anywhere and wait a second</h1>
+
+<p>1
+<p>2
+<p>3
+
+</body>
+</html>
