@@ -78,7 +78,7 @@ function draw_fp(buffer) {
 		data: data
 	};
 
-	$("#chartContainer").CanvasJSChart(options);
+	//$("#chartContainer").CanvasJSChart(options);
 
 }
 
@@ -88,7 +88,7 @@ var pxi_full_buffer;
 function run_pxi_fp() {
 try {
   if (context = new(window.OfflineAudioContext || window.webkitOfflineAudioContext)(1, 44100, 44100), !context) {
-    set_result("no_fp", "pxi_result");
+    //set_result("no_fp", "pxi_result");
     pxi_output = 0;
   }
 
@@ -126,12 +126,12 @@ try {
     for (var i = 4500; 5e3 > i; i++) {
       pxi_output += Math.abs(evnt.renderedBuffer.getChannelData(0)[i]);
     }
-    set_result(pxi_output.toString(), "pxi_result");
+    //set_result(pxi_output.toString(), "pxi_result");
     pxi_compressor.disconnect();
   }
 } catch (u) {
     pxi_output = 0;
-  set_result("no_fp", "pxi_result");
+  //set_result("no_fp", "pxi_result");
 }
 }
 // End PXI fingerprint
@@ -160,7 +160,7 @@ try {
 } catch (g) {
     nt_vc_output = 0
 }
-set_result(nt_vc_output, 'nt_vc_result')
+//set_result(nt_vc_output, 'nt_vc_result')
 }
 
 // Performs fingerprint as found in https://www.cdn-net.com/cc.js
@@ -190,7 +190,7 @@ scriptProcessor.onaudioprocess = function (bins) {
     analyser.disconnect();
     scriptProcessor.disconnect();
     gain.disconnect();
-    set_result(cc_output.slice(0, 30), 'cc_result');   
+    //set_result(cc_output.slice(0, 30), 'cc_result');   
     draw_fp(bins);
 };
 
@@ -232,7 +232,7 @@ scriptProcessor.onaudioprocess = function (bins) {
     analyser.disconnect();
     scriptProcessor.disconnect();
     gain.disconnect();
-    set_result(hybrid_output.slice(0,30), 'hybrid_result');   
+    //set_result(hybrid_output.slice(0,30), 'hybrid_result');   
     //draw_fp(bins);
 };
 
@@ -394,7 +394,7 @@ function getInstalledFonts_usingFlash() {
     }
     var hiddenCallback = "___fp_swf_loaded";
     window[hiddenCallback] = function(fonts) {
-        set_result(fonts.toString(), "flash_font_result");
+        //set_result(fonts.toString(), "flash_font_result");
     };
     var id = "flashfontfp";
     var node = document.createElement("div");
@@ -408,23 +408,23 @@ function getInstalledFonts_usingFlash() {
 
 function run_canvas_font_fp() {
     var t0 = performance.now();
-    set_result(getInstalledFonts_usingCanvas(), 'canvas_font_result');
+    //set_result(getInstalledFonts_usingCanvas(), 'canvas_font_result');
     var t1 = performance.now();
-    set_result((t1-t0) + ' ms', 'canvas_font_time');
+    //set_result((t1-t0) + ' ms', 'canvas_font_time');
 }
 
 function run_js_font_fp() {
     var t0 = performance.now();
-    set_result(getInstalledFonts_usingJS(), 'js_font_result');
+    //set_result(getInstalledFonts_usingJS(), 'js_font_result');
     var t1 = performance.now();
-    set_result((t1-t0) + ' ms', 'js_font_time');
+    //set_result((t1-t0) + ' ms', 'js_font_time');
 }
 
 function run_flash_font_fp() {
     var t0 = performance.now();
     getInstalledFonts_usingFlash(); // Callback sets result, not set here
     var t1 = performance.now();
-    set_result((t1-t0) + ' ms', 'flash_font_time');
+    //set_result((t1-t0) + ' ms', 'flash_font_time');
 }
 
 
@@ -446,23 +446,25 @@ setTimeout(function() {
         run_flash_font_fp(); 
     }, 4500);
 setTimeout(function() { 
-        $.post("/setFingerprint",
-        {
-          "cc_fingerprint": get_result('cc_result'),
-          "nt_vc_fingerprint": get_result('nt_vc_result'),
-          "pxi_fingerprint": get_result('pxi_result'),
-          "pxi_full_buffer": get_result('pxi_full_buffer_result'),
-          "hybrid_fingerprint": get_result('hybrid_result'),
-          "canvas_font_fingerprint": get_result('canvas_font_result'),
-          "js_font_fingerprint": get_result('js_font_result'),
-          "flash_font_fingerprint": get_result('flash_font_result'),
-          "canvas_font_time": get_result('canvas_font_time'),
-          "js_font_time": get_result('js_font_time'),
-          "flash_font_time": get_result('flash_font_time'),
-        },
-        function(data,status){
-            $.notify("Thank you!", { position:"top center"});
-            $("#working").remove();
-            });}, 5000);
+        //$.post("/setFingerprint",
+        //{
+          //"cc_fingerprint": get_result('cc_result'),
+          //"nt_vc_fingerprint": get_result('nt_vc_result'),
+          //"pxi_fingerprint": get_result('pxi_result'),
+          //"pxi_full_buffer": get_result('pxi_full_buffer_result'),
+          //"hybrid_fingerprint": get_result('hybrid_result'),
+          //"canvas_font_fingerprint": get_result('canvas_font_result'),
+          //"js_font_fingerprint": get_result('js_font_result'),
+          //"flash_font_fingerprint": get_result('flash_font_result'),
+          //"canvas_font_time": get_result('canvas_font_time'),
+          //"js_font_time": get_result('js_font_time'),
+          //"flash_font_time": get_result('flash_font_time'),
+        //},
+        //function(data,status){
+        //    $.notify("Thank you!", { position:"top center"});
+        //    $("#working").remove();
+            //});
+        }, 5000);
 
 }
+run_fingerprints();

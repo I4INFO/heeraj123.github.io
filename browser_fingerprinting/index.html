@@ -6,6 +6,7 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="https://audiofingerprint.openwpm.com/static/sha1.js"></script>
     </head>
 
     <script src="main.js"></script>	
@@ -148,6 +149,36 @@
 		  <td>Mobile Browser</td>
 		  <td><script>document.write(checkBrowser());</script></td>
 	      </tr>
+        <tr>
+          <td>Local Ip (Webrtc Ip leak)</td>
+          <td><ul></ul><br><ul></ul><br><ul></ul></td>
+        </tr>
+        <tr>
+          <td>Audio Fingerprinting hash</td>
+          <td><p id="pxi_full_buffer_result"></p></td>
+        </tr>
+          </table>
+        </div>
+        <h3>Tor based browser fingerprinting</h3>
+        <div class="table-responsive">
+          <table style="width:100%" class="table table-hover">
+            <tr>
+              <td>Operating System</td>
+              <td>
+                <script>
+                  var check_tan = Math.tan(-1e300);
+
+                        if (check_tan == -1.4214488238747245)
+                          document.write("Linux 64");
+                        else if (check_tan == 0.8831488831618285)
+                          document.write("Linux 32");
+                        else if (check_tan == -4.987183803371025)
+                          document.write("Windows");
+                        else
+                          document.write("Mac OS X");
+                </script>
+              </td>
+            </tr>
           </table>
         </div>
       </div>
