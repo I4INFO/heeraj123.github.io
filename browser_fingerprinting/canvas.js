@@ -1,5 +1,5 @@
 function generateHash(){
-  var c = document.getElementById("myCanvas");
+  var c = document.createElement("canvas");
   var ctx = c.getContext("2d");
   var txt = "Amrita Privacy checker";
   ctx.textBaseline = "top";
