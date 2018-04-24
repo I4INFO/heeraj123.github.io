@@ -7,6 +7,7 @@ author:     "Heeraj"
 header-img: "img/post-bg-02.png"
 ---
 <script type='text/javascript' src='//eclkmpbn.com/adServe/banners?tid=98477_161886_3&type=footer&size=468x60'></script>
+<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
 <p>I have not blogged for past one year, I have been blogging mostly Web stuff thought of doing something different.</p>
 
 <h2 class="section-heading"><a href="https://www.frida.re">Frida</a></h2>
@@ -29,19 +30,19 @@ So now we have frida in our local computer but next thing is installing frida-se
  a rooted device, first download the frida server from the Android release <a href="https://github.com/frida/frida/releases">
  page.</a>.
 
-<blockquote>
+<code class="prettify">
 $ adb root # might be required
 $ adb push frida-server /data/local/tmp/ 
 $ adb shell "chmod 755 /data/local/tmp/frida-server"
 
 # Before this ensure that root access in available
 $ adb shell "/data/local/tmp/frida-server &"
-</blockquote>
+</code>
 
 <p>Now for installing frida in non rooted devices, we need to download the frida-server so file and then move the bi to 
 frida lib directory. These are the steps:
 
-<blockquote>
+<code class="prettify">
 $ apktool d -o out_dir original.apk
 I: Using Apktool 2.2.2 on original.apk
 I: Loading resource table...
@@ -85,11 +86,11 @@ zipalign 4 repackaged.apk repackaged-final.apk
 
 # Install the apk through adb
 adb install repackaged-final.apk
-</blockquote>
+</code>
 
 <p>To check whether frida server try out these commands</p>
 
-<blockquote>
+<code class="prettify">
 $ adb logcat |grep "Frida"
 04-24 15:18:43.125 13663 13679 I Frida   : Listening on TCP port 27042
 
@@ -106,6 +107,6 @@ $ frida-ps -U
    . . . .   More info at http://www.frida.re/docs/home/
 
 [LENOVO Lenovo K10a40::Gadget]->
-</blockquote>
+</code>
 
 <p>Thank you for patiently reading my blog!</p>
