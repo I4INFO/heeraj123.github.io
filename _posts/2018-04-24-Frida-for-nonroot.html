@@ -1,0 +1,111 @@
+---
+layout:     post
+title:      "Setup Frida for non rooted Android Devices"
+subtitle:   "Web Writeup"
+date:       2018-04-24 09:03:00
+author:     "Heeraj"
+header-img: "img/post-bg-02.png"
+---
+<script type='text/javascript' src='//eclkmpbn.com/adServe/banners?tid=98477_161886_3&type=footer&size=468x60'></script>
+<p>I have not blogged for past one year, I have been blogging mostly Web stuff thought of doing something different.</p>
+
+<h2 class="section-heading"><a href="https://www.frida.re">Frida</a></h2>
+<p>Everyone misinterprets frida as a debugger but actually frida is dynamic instrumentation toolkit which is used by 
+developers, reverse engineers and security enthusiasts. Thanks <a href="https://twitter.com/oleavr">@oleavr</a> for 
+this wonderful tool! Frida injects javascript to analyze native apps on Windows, macOS, GNU/Linux, iOS, Android, and QNX.
+</p>
+
+<p>Today we will be discussing on how to setup frida for Android non rooted devices. I am having a non rooted device
+ and I thought to install frida. Mostly all the documentation I found on the internet where suggesting me to have my
+  phone rooted. But actually it was possible to install frida in non rooted device. I will show how to do, so first you
+  should have frida installed on your local computer. For installing frida in local computer:</p>
+  
+<blockquote>
+sudo pip install frida
+</blockquote>
+
+<p>
+So now we have frida in our local computer but next thing is installing frida-server in mobile or Android  device. For
+ a rooted device, first download the frida server from the Android release <a href="https://github.com/frida/frida/releases">
+ page.</a>.
+
+<blockquote>
+$ adb root # might be required
+$ adb push frida-server /data/local/tmp/ 
+$ adb shell "chmod 755 /data/local/tmp/frida-server"
+
+# Before this ensure that root access in available
+$ adb shell "/data/local/tmp/frida-server &"
+</blockquote>
+
+<p>Now for installing frida in non rooted devices, we need to download the frida-server so file and then move the bi to 
+frida lib directory. These are the steps:
+
+<blockquote>
+$ apktool d -o out_dir original.apk
+I: Using Apktool 2.2.2 on original.apk
+I: Loading resource table...
+I: Decoding AndroidManifest.xml with resources...
+I: Loading resource table from file: ~/.local/share/apktool/framework/1.apk
+I: Regular manifest package...
+I: Decoding file-resources...
+I: Decoding values XMLs...
+I: Baksmaling classes.dex...
+I: Copying assets and libs...
+I: Copying unknown files...
+I: Copying original files...
+
+$ wget https://github.com/frida/frida/releases/download/10.7.7/frida-gadget-10.7.7-android-arm.so.xz
+--2018-04-24 15:40:18--  https://github.com/frida/frida/releases/download/10.7.7/frida-gadget-10.7.7-android-arm.so.xz
+2018-04-24 15:40:36 (273 KB/s) - ‘frida-gadget-10.7.7-android-arm.so.xz’ saved [3660464/3660464]
+
+# Extract the .so file
+$ unxz frida-gadget-10.7.7-android-arm.so.xz
+
+# Move the .so to the lib file
+$ mv frida-gadget-10.7.7-android-arm.so <apk_name>/lib/armeabi/libfrida-gadget.so
+
+# Recompiling after the changes
+$ apktool b -o repackaged.apk test/
+I: Using Apktool 2.3.1
+I: Checking whether sources has changed...
+I: Checking whether resources has changed...
+I: Copying libs... (/lib)
+I: Building apk file...
+I: Copying unknown files/dir...
+
+# if you dont have a keystore already, here's how to create one
+$ keytool -genkey -v -keystore custom.keystore -alias mykeyaliasname -keyalg RSA -keysize 2048 -validity 10000
+
+# Signing with jarsigner
+jarsigner -sigalg SHA1withRSA -digestalg SHA1 -keystore custom.keystore -storepass <pass> repackaged.apk mykeyaliasname
+
+# Zipalign the apk
+zipalign 4 repackaged.apk repackaged-final.apk
+
+# Install the apk through adb
+adb install repackaged-final.apk
+</blockquote>
+
+<p>To check whether frida server try out these commands</p>
+
+<blockquote>
+$ adb logcat |grep "Frida"
+04-24 15:18:43.125 13663 13679 I Frida   : Listening on TCP port 27042
+
+# Both local frida client and frida server should be of same version
+$ frida-ps -U
+     ____
+    / _  |   Frida 10.7.7 - A world-class dynamic instrumentation toolkit
+   | (_| |
+    > _  |   Commands:
+   /_/ |_|       help      -> Displays the help system
+   . . . .       object?   -> Display information about 'object'
+   . . . .       exit/quit -> Exit
+   . . . .
+   . . . .   More info at http://www.frida.re/docs/home/
+
+[LENOVO Lenovo K10a40::Gadget]->
+</blockquote>
+
+<p>Thank you for patiently reading my blog!</p>
