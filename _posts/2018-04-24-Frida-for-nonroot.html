@@ -28,85 +28,85 @@ sudo pip install frida
 <p>
 So now we have frida in our local computer but next thing is installing frida-server in mobile or Android  device. For
  a rooted device, first download the frida server from the Android release <a href="https://github.com/frida/frida/releases">
- page.</a>.
+ page.</a><br>
 
 <code class="prettify">
-$ adb root # might be required
-$ adb push frida-server /data/local/tmp/ 
-$ adb shell "chmod 755 /data/local/tmp/frida-server"
-
-# Before this ensure that root access in available
-$ adb shell "/data/local/tmp/frida-server &"
+<br>$ adb root # might be required<br>
+$ adb push frida-server /data/local/tmp/<br> 
+$ adb shell "chmod 755 /data/local/tmp/frida-server"<br>
+<br>
+# Before this ensure that root access in available<br>
+$ adb shell "/data/local/tmp/frida-server &"<br>
 </code>
-
+<br>
 <p>Now for installing frida in non rooted devices, we need to download the frida-server so file and then move the bi to 
 frida lib directory. These are the steps:
-
+<br>
 <code class="prettify">
-$ apktool d -o out_dir original.apk
-I: Using Apktool 2.2.2 on original.apk
-I: Loading resource table...
-I: Decoding AndroidManifest.xml with resources...
-I: Loading resource table from file: ~/.local/share/apktool/framework/1.apk
-I: Regular manifest package...
-I: Decoding file-resources...
-I: Decoding values XMLs...
-I: Baksmaling classes.dex...
-I: Copying assets and libs...
-I: Copying unknown files...
-I: Copying original files...
-
-$ wget https://github.com/frida/frida/releases/download/10.7.7/frida-gadget-10.7.7-android-arm.so.xz
---2018-04-24 15:40:18--  https://github.com/frida/frida/releases/download/10.7.7/frida-gadget-10.7.7-android-arm.so.xz
-2018-04-24 15:40:36 (273 KB/s) - ‘frida-gadget-10.7.7-android-arm.so.xz’ saved [3660464/3660464]
-
-# Extract the .so file
-$ unxz frida-gadget-10.7.7-android-arm.so.xz
-
-# Move the .so to the lib file
-$ mv frida-gadget-10.7.7-android-arm.so <apk_name>/lib/armeabi/libfrida-gadget.so
-
-# Recompiling after the changes
-$ apktool b -o repackaged.apk test/
-I: Using Apktool 2.3.1
-I: Checking whether sources has changed...
-I: Checking whether resources has changed...
-I: Copying libs... (/lib)
-I: Building apk file...
-I: Copying unknown files/dir...
-
-# if you dont have a keystore already, here's how to create one
-$ keytool -genkey -v -keystore custom.keystore -alias mykeyaliasname -keyalg RSA -keysize 2048 -validity 10000
-
-# Signing with jarsigner
-jarsigner -sigalg SHA1withRSA -digestalg SHA1 -keystore custom.keystore -storepass <pass> repackaged.apk mykeyaliasname
-
-# Zipalign the apk
-zipalign 4 repackaged.apk repackaged-final.apk
-
-# Install the apk through adb
-adb install repackaged-final.apk
-</code>
+<br>$ apktool d -o out_dir original.apk<br>
+I: Using Apktool 2.2.2 on original.apk<br>
+I: Loading resource table...<br>
+I: Decoding AndroidManifest.xml with resources...<br>
+I: Loading resource table from file: ~/.local/share/apktool/framework/1.apk<br>
+I: Regular manifest package...<br>
+I: Decoding file-resources...<br>
+I: Decoding values XMLs...<br>
+I: Baksmaling classes.dex...<br>
+I: Copying assets and libs...<br>
+I: Copying unknown files...<br>
+I: Copying original files...<br>
+<br>
+$ wget https://github.com/frida/frida/releases/download/10.7.7/frida-gadget-10.7.7-android-arm.so.xz<br>
+--2018-04-24 15:40:18--  https://github.com/frida/frida/releases/download/10.7.7/frida-gadget-10.7.7-android-arm.so.xz<br>
+2018-04-24 15:40:36 (273 KB/s) - ‘frida-gadget-10.7.7-android-arm.so.xz’ saved [3660464/3660464]<br>
+<br>
+# Extract the .so file<br>
+$ unxz frida-gadget-10.7.7-android-arm.so.xz<br>
+<br>
+# Move the .so to the lib file<br>
+$ mv frida-gadget-10.7.7-android-arm.so <apk_name>/lib/armeabi/libfrida-gadget.so<br>
+<br>
+# Recompiling after the changes<br>
+$ apktool b -o repackaged.apk test/<br>
+I: Using Apktool 2.3.1<br>
+I: Checking whether sources has changed...<br>
+I: Checking whether resources has changed...<br>
+I: Copying libs... (/lib)<br>
+I: Building apk file...<br>
+I: Copying unknown files/dir...<br>
+<br>
+# if you dont have a keystore already, here's how to create one<br>
+$ keytool -genkey -v -keystore custom.keystore -alias mykeyaliasname -keyalg RSA -keysize 2048 -validity 10000<br>
+<br>
+# Signing with jarsigner<br>
+jarsigner -sigalg SHA1withRSA -digestalg SHA1 -keystore custom.keystore -storepass <pass> repackaged.apk mykeyaliasname<br>
+<br>
+# Zipalign the apk<br>
+zipalign 4 repackaged.apk repackaged-final.apk<br>
+<br>
+# Install the apk through adb<br>
+adb install repackaged-final.apk<br>
+</code><br>
 
 <p>To check whether frida server try out these commands</p>
 
 <code class="prettify">
-$ adb logcat |grep "Frida"
-04-24 15:18:43.125 13663 13679 I Frida   : Listening on TCP port 27042
-
-# Both local frida client and frida server should be of same version
-$ frida-ps -U
-     ____
-    / _  |   Frida 10.7.7 - A world-class dynamic instrumentation toolkit
-   | (_| |
-    > _  |   Commands:
-   /_/ |_|       help      -> Displays the help system
-   . . . .       object?   -> Display information about 'object'
-   . . . .       exit/quit -> Exit
-   . . . .
-   . . . .   More info at http://www.frida.re/docs/home/
-
-[LENOVO Lenovo K10a40::Gadget]->
+<br>$ adb logcat |grep "Frida"<br>
+04-24 15:18:43.125 13663 13679 I Frida   : Listening on TCP port 27042<br>
+<br>
+# Both local frida client and frida server should be of same version<br>
+$ frida-ps -U<br>
+     ____<br>
+    / _  |   Frida 10.7.7 - A world-class dynamic instrumentation toolkit<br>
+   | (_| |<br>
+    > _  |   Commands:<br>
+   /_/ |_|       help      -> Displays the help system<br>
+   . . . .       object?   -> Display information about 'object'<br>
+   . . . .       exit/quit -> Exit<br>
+   . . . .<br>
+   . . . .   More info at http://www.frida.re/docs/home/<br>
+<br>
+[LENOVO Lenovo K10a40::Gadget]-><br>
 </code>
 
 <p>Thank you for patiently reading my blog!</p>
