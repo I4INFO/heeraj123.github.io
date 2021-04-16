@@ -1,0 +1,61 @@
+---
+layout:     post
+title:      "Strapi Node.js headless CMS"
+subtitle:   "Content management system (CMS) and a Node.js framework"
+date:       2021-04-16 21:01:00
+author:     "Heeraj Haridas Nair"
+header-img: "img/post-bg-02.png"
+---
+<p>I have not blogged for a long time, I am coming back to blog and documenting what I learn each day. Today I will showing
+  how to install Strapi Node.js framework. 
+</p>
+
+<h2 class="section-heading"><a href="https://strapi.io/">Strapi</a></h2>
+<p>Strapi is the leading open-source headless CMS. It’s 100% Javascript, fully customizable and developer-first.
+  Strapi is the leading open-source headless CMS it helps your design APIs fast without re-inventing the wheel.
+  With over 25,000 stars ⭐️ on GitHub and more than 400 contributors 🙋🏻‍♂️, Strapi is the most popular open-source headless CMS.
+</p>
+
+<h3 class="section-heading">Installation</h3>
+<p>Install Node.js from NodeSource installation script</p>
+  
+<blockquote>
+$ curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
+</blockquote>
+
+<p>NodeSource repository is enabled, install Node.js and npm</p>
+
+<blockquote>
+  $ sudo apt install nodejs
+</blockquote>
+
+<p>Node.js and npm were successfully installed by printing their versions</p>
+
+<blockquote>
+  $ node --version
+  v14.2.0
+
+  $ npm --version
+  6.14.4 
+</blockquote>
+
+<p>compile native addons from npm you’ll need to install the development tools</p>
+
+<blockquote>
+  $ sudo apt install build-essential
+</blockquote>
+
+<p>Install Strapi and Create a new project</p>
+
+<blockquote>
+  $ npx create-strapi-app my-project --quickstart
+</blockquote>
+
+<p>Create an Administrator user
+
+Navigate to http://localhost:1337/admin (opens new window).
+
+Complete the form to create the first Administrator user
+</p>
+
+<p>Thank you for patiently reading my blog!</p>
